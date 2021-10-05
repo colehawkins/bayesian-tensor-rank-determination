@@ -1,0 +1,529 @@
+Namespace(activation_function='relu', arch_embedding_size='4-3-2', arch_interaction_itself=False, arch_interaction_op='dot', arch_mlp_bot='13-512-256-256-128', arch_mlp_top='512-256-1', arch_sparse_feature_size=128, data_generation='dataset', data_randomize='total', data_set='kaggle', data_size=1, data_sub_sample_rate=0.0, data_trace_enable_padding=False, data_trace_file='./input/dist_emb_j.log', debug_mode=False, enable_profiling=False, inference_only=False, kl_multiplier=0.0, learning_rate=0.0001, load_model='saved_models/safe/full', load_saved=1, loss_function='bce', loss_threshold=0.0, loss_weights='1.0-1.0', lr_decay_start_step=0, lr_num_decay_steps=0, lr_num_warmup_steps=0, max_ind_range=-1, md_flag=False, md_round_dims=False, md_temperature=0.3, md_threshold=200, memory_map=True, mini_batch_size=512, mlperf_acc_threshold=0.0, mlperf_auc_threshold=0.0, mlperf_bin_loader=False, mlperf_bin_shuffle=False, mlperf_logging=False, nepochs=1, no_kl_steps=50000, num_batches=0, num_indices_per_lookup=10, num_indices_per_lookup_fixed=False, num_workers=0, numpy_rand_seed=123, optimizer='SGD', plot_compute_graph=False, print_freq=512, print_precision=5, print_time=False, processed_data_file='./input/kaggleAdDisplayChallenge_processed.npz', qr_collisions=4, qr_flag=False, qr_operation='mult', qr_threshold=200, raw_data_file='./input/train.txt', round_targets=True, save_model='', save_onnx=False, sync_dense_params=True, tensor_type='TensorTrain', test_freq=1024, test_mini_batch_size=-1, test_num_workers=16, use_gpu=False)
+Using CPU...
+Reading pre-processed data=./input/kaggleAdDisplayChallenge_processed.npz
+Sparse features= 26, Dense features= 13
+Reading pre-processed data=./input/kaggleAdDisplayChallenge_processed.npz
+Sparse features= 26, Dense features= 13
+Embedding 0 size 1460x128
+Embedding 1 size 583x128
+Embedding 2 size 10131227x128
+Embedding 3 size 2202608x128
+Embedding 4 size 305x128
+Embedding 5 size 24x128
+Embedding 6 size 12517x128
+Embedding 7 size 633x128
+Embedding 8 size 3x128
+Embedding 9 size 93145x128
+Embedding 10 size 5683x128
+Embedding 11 size 8351593x128
+Embedding 12 size 3194x128
+Embedding 13 size 27x128
+Embedding 14 size 14992x128
+Embedding 15 size 5461306x128
+Embedding 16 size 10x128
+Embedding 17 size 5652x128
+Embedding 18 size 2173x128
+Embedding 19 size 4x128
+Embedding 20 size 7046547x128
+Embedding 21 size 18x128
+Embedding 22 size 15x128
+Embedding 23 size 286181x128
+Embedding 24 size 105x128
+Embedding 25 size 142572x128
+Loading saved model saved_models/safe/full
+Saved at: epoch = 0/1, batch = 71680/76743, ntbatch = 6396
+Training state: loss = 0.454900, accuracy = 78.811 %
+Testing state: loss = 0.461507, accuracy = 78.399 %
+Before compression
+<bound method Module.parameters of DLRM_Net(
+  (emb_l): ModuleList(
+    (0): EmbeddingBag(1460, 128, mode=sum)
+    (1): EmbeddingBag(583, 128, mode=sum)
+    (2): EmbeddingBag(10131227, 128, mode=sum)
+    (3): EmbeddingBag(2202608, 128, mode=sum)
+    (4): EmbeddingBag(305, 128, mode=sum)
+    (5): EmbeddingBag(24, 128, mode=sum)
+    (6): EmbeddingBag(12517, 128, mode=sum)
+    (7): EmbeddingBag(633, 128, mode=sum)
+    (8): EmbeddingBag(3, 128, mode=sum)
+    (9): EmbeddingBag(93145, 128, mode=sum)
+    (10): EmbeddingBag(5683, 128, mode=sum)
+    (11): EmbeddingBag(8351593, 128, mode=sum)
+    (12): EmbeddingBag(3194, 128, mode=sum)
+    (13): EmbeddingBag(27, 128, mode=sum)
+    (14): EmbeddingBag(14992, 128, mode=sum)
+    (15): EmbeddingBag(5461306, 128, mode=sum)
+    (16): EmbeddingBag(10, 128, mode=sum)
+    (17): EmbeddingBag(5652, 128, mode=sum)
+    (18): EmbeddingBag(2173, 128, mode=sum)
+    (19): EmbeddingBag(4, 128, mode=sum)
+    (20): EmbeddingBag(7046547, 128, mode=sum)
+    (21): EmbeddingBag(18, 128, mode=sum)
+    (22): EmbeddingBag(15, 128, mode=sum)
+    (23): EmbeddingBag(286181, 128, mode=sum)
+    (24): EmbeddingBag(105, 128, mode=sum)
+    (25): EmbeddingBag(142572, 128, mode=sum)
+  )
+  (bot_l): Sequential(
+    (0): Linear(in_features=13, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=256, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=256, out_features=128, bias=True)
+    (7): ReLU()
+  )
+  (top_l): Sequential(
+    (0): Linear(in_features=479, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)>
+test acc 2567044.000000 test loss 1511127.503201 test_sample 3274330.000000
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+Shape  [[200, 220, 250], [128]]
+init tensor shape torch.Size([10131227, 128])
+torch.Size([1, 200, 24]) torch.Size([1, 200, 24])
+torch.Size([24, 220, 24]) torch.Size([24, 220, 24])
+torch.Size([24, 250, 24]) torch.Size([24, 250, 24])
+torch.Size([24, 128, 1]) torch.Size([24, 128, 1])
+Shape  [[125, 130, 136], [128]]
+init tensor shape torch.Size([2202608, 128])
+torch.Size([1, 125, 24]) torch.Size([1, 125, 24])
+torch.Size([24, 130, 24]) torch.Size([24, 130, 24])
+torch.Size([24, 136, 24]) torch.Size([24, 136, 24])
+torch.Size([24, 128, 1]) torch.Size([24, 128, 1])
+Shape  [[200, 200, 209], [128]]
+init tensor shape torch.Size([8351593, 128])
+torch.Size([1, 200, 24]) torch.Size([1, 200, 24])
+torch.Size([24, 200, 24]) torch.Size([24, 200, 24])
+torch.Size([24, 209, 24]) torch.Size([24, 209, 24])
+torch.Size([24, 128, 1]) torch.Size([24, 128, 1])
+Shape  [[166, 175, 188], [128]]
+init tensor shape torch.Size([5461306, 128])
+torch.Size([1, 166, 24]) torch.Size([1, 166, 24])
+torch.Size([24, 175, 24]) torch.Size([24, 175, 24])
+torch.Size([24, 188, 24]) torch.Size([24, 188, 24])
+torch.Size([24, 128, 1]) torch.Size([24, 128, 1])
+Shape  [[200, 200, 200], [128]]
+init tensor shape torch.Size([7046547, 128])
+torch.Size([1, 200, 24]) torch.Size([1, 200, 24])
+torch.Size([24, 200, 24]) torch.Size([24, 200, 24])
+torch.Size([24, 200, 24]) torch.Size([24, 200, 24])
+torch.Size([24, 128, 1]) torch.Size([24, 128, 1])
+After compression
+<bound method Module.parameters of DLRM_Net(
+  (emb_l): ModuleList(
+    (0): EmbeddingBag(1460, 128, mode=sum)
+    (1): EmbeddingBag(583, 128, mode=sum)
+    (2): TensorizedEmbedding(
+      (tensor): TensorTrain(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x200x24]
+            (1): Parameter containing: [torch.FloatTensor of size 24x220x24]
+            (2): Parameter containing: [torch.FloatTensor of size 24x250x24]
+            (3): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (4): Parameter containing: [torch.FloatTensor of size 1x200x24]
+            (5): Parameter containing: [torch.FloatTensor of size 24x220x24]
+            (6): Parameter containing: [torch.FloatTensor of size 24x250x24]
+            (7): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (8): Parameter containing: [torch.FloatTensor of size 24]
+            (9): Parameter containing: [torch.FloatTensor of size 24]
+            (10): Parameter containing: [torch.FloatTensor of size 24]
+        )
+      )
+    )
+    (3): TensorizedEmbedding(
+      (tensor): TensorTrain(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x125x24]
+            (1): Parameter containing: [torch.FloatTensor of size 24x130x24]
+            (2): Parameter containing: [torch.FloatTensor of size 24x136x24]
+            (3): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (4): Parameter containing: [torch.FloatTensor of size 1x125x24]
+            (5): Parameter containing: [torch.FloatTensor of size 24x130x24]
+            (6): Parameter containing: [torch.FloatTensor of size 24x136x24]
+            (7): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (8): Parameter containing: [torch.FloatTensor of size 24]
+            (9): Parameter containing: [torch.FloatTensor of size 24]
+            (10): Parameter containing: [torch.FloatTensor of size 24]
+        )
+      )
+    )
+    (4): EmbeddingBag(305, 128, mode=sum)
+    (5): EmbeddingBag(24, 128, mode=sum)
+    (6): EmbeddingBag(12517, 128, mode=sum)
+    (7): EmbeddingBag(633, 128, mode=sum)
+    (8): EmbeddingBag(3, 128, mode=sum)
+    (9): EmbeddingBag(93145, 128, mode=sum)
+    (10): EmbeddingBag(5683, 128, mode=sum)
+    (11): TensorizedEmbedding(
+      (tensor): TensorTrain(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x200x24]
+            (1): Parameter containing: [torch.FloatTensor of size 24x200x24]
+            (2): Parameter containing: [torch.FloatTensor of size 24x209x24]
+            (3): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (4): Parameter containing: [torch.FloatTensor of size 1x200x24]
+            (5): Parameter containing: [torch.FloatTensor of size 24x200x24]
+            (6): Parameter containing: [torch.FloatTensor of size 24x209x24]
+            (7): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (8): Parameter containing: [torch.FloatTensor of size 24]
+            (9): Parameter containing: [torch.FloatTensor of size 24]
+            (10): Parameter containing: [torch.FloatTensor of size 24]
+        )
+      )
+    )
+    (12): EmbeddingBag(3194, 128, mode=sum)
+    (13): EmbeddingBag(27, 128, mode=sum)
+    (14): EmbeddingBag(14992, 128, mode=sum)
+    (15): TensorizedEmbedding(
+      (tensor): TensorTrain(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x166x24]
+            (1): Parameter containing: [torch.FloatTensor of size 24x175x24]
+            (2): Parameter containing: [torch.FloatTensor of size 24x188x24]
+            (3): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (4): Parameter containing: [torch.FloatTensor of size 1x166x24]
+            (5): Parameter containing: [torch.FloatTensor of size 24x175x24]
+            (6): Parameter containing: [torch.FloatTensor of size 24x188x24]
+            (7): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (8): Parameter containing: [torch.FloatTensor of size 24]
+            (9): Parameter containing: [torch.FloatTensor of size 24]
+            (10): Parameter containing: [torch.FloatTensor of size 24]
+        )
+      )
+    )
+    (16): EmbeddingBag(10, 128, mode=sum)
+    (17): EmbeddingBag(5652, 128, mode=sum)
+    (18): EmbeddingBag(2173, 128, mode=sum)
+    (19): EmbeddingBag(4, 128, mode=sum)
+    (20): TensorizedEmbedding(
+      (tensor): TensorTrain(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x200x24]
+            (1): Parameter containing: [torch.FloatTensor of size 24x200x24]
+            (2): Parameter containing: [torch.FloatTensor of size 24x200x24]
+            (3): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (4): Parameter containing: [torch.FloatTensor of size 1x200x24]
+            (5): Parameter containing: [torch.FloatTensor of size 24x200x24]
+            (6): Parameter containing: [torch.FloatTensor of size 24x200x24]
+            (7): Parameter containing: [torch.FloatTensor of size 24x128x1]
+            (8): Parameter containing: [torch.FloatTensor of size 24]
+            (9): Parameter containing: [torch.FloatTensor of size 24]
+            (10): Parameter containing: [torch.FloatTensor of size 24]
+        )
+      )
+    )
+    (21): EmbeddingBag(18, 128, mode=sum)
+    (22): EmbeddingBag(15, 128, mode=sum)
+    (23): EmbeddingBag(286181, 128, mode=sum)
+    (24): EmbeddingBag(105, 128, mode=sum)
+    (25): EmbeddingBag(142572, 128, mode=sum)
+  )
+  (bot_l): Sequential(
+    (0): Linear(in_features=13, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=256, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=256, out_features=128, bias=True)
+    (7): ReLU()
+  )
+  (top_l): Sequential(
+    (0): Linear(in_features=479, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)>
+test acc 2563958.000000 test loss 1516895.522337 test_sample 3274330.000000
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+time/loss/accuracy (if enabled):
+Finished training it 512/76743 of epoch 0, -1.00 ms/it, loss 0.456243, accuracy 78.712 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 1024/76743 of epoch 0, -1.00 ms/it, loss 0.458619, accuracy 78.607 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 1024/76743 of epoch 0, loss 0.461877, accuracy 78.352 %, best 78.399 %
+Finished training it 1536/76743 of epoch 0, -1.00 ms/it, loss 0.456405, accuracy 78.772 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 2048/76743 of epoch 0, -1.00 ms/it, loss 0.455037, accuracy 78.732 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 2048/76743 of epoch 0, loss 0.461738, accuracy 78.360 %, best 78.399 %
+Finished training it 2560/76743 of epoch 0, -1.00 ms/it, loss 0.456128, accuracy 78.711 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 3072/76743 of epoch 0, -1.00 ms/it, loss 0.455865, accuracy 78.748 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 3072/76743 of epoch 0, loss 0.461659, accuracy 78.362 %, best 78.399 %
+Finished training it 3584/76743 of epoch 0, -1.00 ms/it, loss 0.454147, accuracy 78.859 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 4096/76743 of epoch 0, -1.00 ms/it, loss 0.456802, accuracy 78.772 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 4096/76743 of epoch 0, loss 0.461625, accuracy 78.366 %, best 78.399 %
+Finished training it 4608/76743 of epoch 0, -1.00 ms/it, loss 0.455777, accuracy 78.833 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 5120/76743 of epoch 0, -1.00 ms/it, loss 0.456405, accuracy 78.679 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 5120/76743 of epoch 0, loss 0.461597, accuracy 78.369 %, best 78.399 %
+Finished training it 5632/76743 of epoch 0, -1.00 ms/it, loss 0.456721, accuracy 78.691 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 6144/76743 of epoch 0, -1.00 ms/it, loss 0.455696, accuracy 78.823 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 6144/76743 of epoch 0, loss 0.461535, accuracy 78.372 %, best 78.399 %
+Finished training it 6656/76743 of epoch 0, -1.00 ms/it, loss 0.456482, accuracy 78.769 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 7168/76743 of epoch 0, -1.00 ms/it, loss 0.455897, accuracy 78.877 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 7168/76743 of epoch 0, loss 0.461496, accuracy 78.375 %, best 78.399 %
+Finished training it 7680/76743 of epoch 0, -1.00 ms/it, loss 0.454437, accuracy 78.825 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 8192/76743 of epoch 0, -1.00 ms/it, loss 0.456628, accuracy 78.663 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 8192/76743 of epoch 0, loss 0.461488, accuracy 78.376 %, best 78.399 %
+Finished training it 8704/76743 of epoch 0, -1.00 ms/it, loss 0.455265, accuracy 78.898 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 9216/76743 of epoch 0, -1.00 ms/it, loss 0.455568, accuracy 78.743 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 9216/76743 of epoch 0, loss 0.461437, accuracy 78.374 %, best 78.399 %
+Finished training it 9728/76743 of epoch 0, -1.00 ms/it, loss 0.455522, accuracy 78.744 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 10240/76743 of epoch 0, -1.00 ms/it, loss 0.455566, accuracy 78.852 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 10240/76743 of epoch 0, loss 0.461411, accuracy 78.378 %, best 78.399 %
+Finished training it 10752/76743 of epoch 0, -1.00 ms/it, loss 0.453687, accuracy 78.913 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 11264/76743 of epoch 0, -1.00 ms/it, loss 0.456524, accuracy 78.731 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 11264/76743 of epoch 0, loss 0.461392, accuracy 78.381 %, best 78.399 %
+Finished training it 11776/76743 of epoch 0, -1.00 ms/it, loss 0.456264, accuracy 78.692 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 12288/76743 of epoch 0, -1.00 ms/it, loss 0.454755, accuracy 78.875 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 12288/76743 of epoch 0, loss 0.461379, accuracy 78.382 %, best 78.399 %
+Finished training it 12800/76743 of epoch 0, -1.00 ms/it, loss 0.456121, accuracy 78.740 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 13312/76743 of epoch 0, -1.00 ms/it, loss 0.456542, accuracy 78.788 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 13312/76743 of epoch 0, loss 0.461380, accuracy 78.385 %, best 78.399 %
+Finished training it 13824/76743 of epoch 0, -1.00 ms/it, loss 0.454236, accuracy 78.859 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 14336/76743 of epoch 0, -1.00 ms/it, loss 0.454130, accuracy 78.893 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 14336/76743 of epoch 0, loss 0.461355, accuracy 78.384 %, best 78.399 %
+Finished training it 14848/76743 of epoch 0, -1.00 ms/it, loss 0.454986, accuracy 78.766 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 15360/76743 of epoch 0, -1.00 ms/it, loss 0.454111, accuracy 78.822 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 15360/76743 of epoch 0, loss 0.461319, accuracy 78.387 %, best 78.399 %
+Finished training it 15872/76743 of epoch 0, -1.00 ms/it, loss 0.453930, accuracy 78.790 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 16384/76743 of epoch 0, -1.00 ms/it, loss 0.454570, accuracy 78.897 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 16384/76743 of epoch 0, loss 0.461285, accuracy 78.383 %, best 78.399 %
+Finished training it 16896/76743 of epoch 0, -1.00 ms/it, loss 0.456330, accuracy 78.791 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 17408/76743 of epoch 0, -1.00 ms/it, loss 0.456405, accuracy 78.764 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 17408/76743 of epoch 0, loss 0.461291, accuracy 78.382 %, best 78.399 %
+Finished training it 17920/76743 of epoch 0, -1.00 ms/it, loss 0.454038, accuracy 78.863 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 18432/76743 of epoch 0, -1.00 ms/it, loss 0.455716, accuracy 78.746 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 18432/76743 of epoch 0, loss 0.461304, accuracy 78.383 %, best 78.399 %
+Finished training it 18944/76743 of epoch 0, -1.00 ms/it, loss 0.457924, accuracy 78.625 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 19456/76743 of epoch 0, -1.00 ms/it, loss 0.452522, accuracy 78.996 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 19456/76743 of epoch 0, loss 0.461237, accuracy 78.382 %, best 78.399 %
+Finished training it 19968/76743 of epoch 0, -1.00 ms/it, loss 0.456048, accuracy 78.754 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 20480/76743 of epoch 0, -1.00 ms/it, loss 0.455805, accuracy 78.812 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Testing at - 20480/76743 of epoch 0, loss 0.461224, accuracy 78.386 %, best 78.399 %
+Finished training it 20992/76743 of epoch 0, -1.00 ms/it, loss 0.454761, accuracy 78.984 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Finished training it 21504/76743 of epoch 0, -1.00 ms/it, loss 0.455965, accuracy 78.846 %
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]
+Tensor type  TensorTrain  rank  [24, 24, 24]

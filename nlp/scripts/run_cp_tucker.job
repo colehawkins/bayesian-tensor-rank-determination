@@ -1,0 +1,15 @@
+#SBATCH --time=5-00:00:00
+#SBATCH --job-name=tt_ttm
+#SBATCH -o "tt_ttm.out"
+#SBATCH --mail-type=begin
+#SBATCH --mail-type=end
+#SBATCH --mail-user=colehawkins@ucsb.edu
+#SBATCH -N 1 --partition=gpu --ntasks-per-node=1
+#SBATCH --gres=gpu:1
+
+/bin/hostname
+source /home/colehawkins/.bashrc
+conda activate tensor_layers
+
+
+srun --gres=gpu:1  bash scripts/cp_tucker.sh

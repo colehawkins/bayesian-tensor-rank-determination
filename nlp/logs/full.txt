@@ -1,0 +1,311 @@
+Namespace(batch_size=256, dropout=0.5, embed_dim=256, embedding='full', eta=1.0, hidden_dim=128, kl_multiplier=1.0, lr=0.001, n_epochs=100, no_kl_epochs=20, prior_type='log_uniform', rank=8, rank_loss=False, voc_dim=25000, warmup_epochs=50)
+Building dataset...
+Done
+Sequential(
+  (0): Embedding(25000, 256)
+  (1): LSTM_Classifier(
+    (rnn): LSTM(256, 128, num_layers=2, dropout=0.5, bidirectional=True)
+    (fc): Linear(in_features=256, out_features=1, bias=True)
+    (dropout): Dropout(p=0.5, inplace=False)
+  )
+)
+| Epoch: 01 | Train Loss: 0.683 | Train Acc: 55.22% | Val. Loss: 0.656 | Val. Acc: 60.89% | Test Loss: 0.657 | Test Acc: 60.94% |
+TEST ACCURACY: 60.94
+Epoch time : 63.85793924331665
+| Epoch: 02 | Train Loss: 0.638 | Train Acc: 63.58% | Val. Loss: 0.602 | Val. Acc: 67.92% | Test Loss: 0.602 | Test Acc: 67.94% |
+TEST ACCURACY: 67.94
+Epoch time : 64.30246686935425
+| Epoch: 03 | Train Loss: 0.617 | Train Acc: 66.81% | Val. Loss: 0.591 | Val. Acc: 70.82% | Test Loss: 0.593 | Test Acc: 70.42% |
+TEST ACCURACY: 70.42
+Epoch time : 64.18479466438293
+| Epoch: 04 | Train Loss: 0.620 | Train Acc: 66.02% | Val. Loss: 0.677 | Val. Acc: 69.18% | Test Loss: 0.667 | Test Acc: 70.04% |
+TEST ACCURACY: 70.42
+Epoch time : 64.33851671218872
+| Epoch: 05 | Train Loss: 0.618 | Train Acc: 66.32% | Val. Loss: 0.622 | Val. Acc: 69.20% | Test Loss: 0.633 | Test Acc: 68.56% |
+TEST ACCURACY: 70.42
+Epoch time : 64.48434543609619
+| Epoch: 06 | Train Loss: 0.601 | Train Acc: 67.30% | Val. Loss: 0.654 | Val. Acc: 55.22% | Test Loss: 0.653 | Test Acc: 55.24% |
+TEST ACCURACY: 70.42
+Epoch time : 64.52780938148499
+| Epoch: 07 | Train Loss: 0.542 | Train Acc: 73.29% | Val. Loss: 0.482 | Val. Acc: 78.14% | Test Loss: 0.477 | Test Acc: 78.59% |
+TEST ACCURACY: 78.59
+Epoch time : 64.53838038444519
+| Epoch: 08 | Train Loss: 0.479 | Train Acc: 78.06% | Val. Loss: 0.467 | Val. Acc: 80.13% | Test Loss: 0.464 | Test Acc: 80.25% |
+TEST ACCURACY: 80.25
+Epoch time : 64.57806062698364
+| Epoch: 09 | Train Loss: 0.441 | Train Acc: 80.62% | Val. Loss: 0.442 | Val. Acc: 81.22% | Test Loss: 0.438 | Test Acc: 81.10% |
+TEST ACCURACY: 81.1
+Epoch time : 64.71188569068909
+| Epoch: 10 | Train Loss: 0.379 | Train Acc: 83.89% | Val. Loss: 0.404 | Val. Acc: 83.62% | Test Loss: 0.401 | Test Acc: 83.66% |
+TEST ACCURACY: 83.66
+Epoch time : 64.8075749874115
+| Epoch: 11 | Train Loss: 0.347 | Train Acc: 85.50% | Val. Loss: 0.398 | Val. Acc: 83.70% | Test Loss: 0.392 | Test Acc: 84.46% |
+TEST ACCURACY: 84.46
+Epoch time : 64.85262060165405
+| Epoch: 12 | Train Loss: 0.331 | Train Acc: 86.10% | Val. Loss: 0.414 | Val. Acc: 84.08% | Test Loss: 0.407 | Test Acc: 84.50% |
+TEST ACCURACY: 84.5
+Epoch time : 64.94477105140686
+| Epoch: 13 | Train Loss: 0.315 | Train Acc: 87.24% | Val. Loss: 0.487 | Val. Acc: 83.07% | Test Loss: 0.488 | Test Acc: 83.12% |
+TEST ACCURACY: 84.5
+Epoch time : 65.15238928794861
+| Epoch: 14 | Train Loss: 0.292 | Train Acc: 88.24% | Val. Loss: 0.532 | Val. Acc: 80.51% | Test Loss: 0.520 | Test Acc: 80.86% |
+TEST ACCURACY: 84.5
+Epoch time : 65.09572076797485
+| Epoch: 15 | Train Loss: 0.281 | Train Acc: 88.73% | Val. Loss: 0.368 | Val. Acc: 86.26% | Test Loss: 0.370 | Test Acc: 86.17% |
+TEST ACCURACY: 86.17
+Epoch time : 65.17617177963257
+| Epoch: 16 | Train Loss: 0.263 | Train Acc: 89.47% | Val. Loss: 0.369 | Val. Acc: 86.73% | Test Loss: 0.369 | Test Acc: 86.68% |
+TEST ACCURACY: 86.68
+Epoch time : 65.5352578163147
+| Epoch: 17 | Train Loss: 0.247 | Train Acc: 90.42% | Val. Loss: 0.340 | Val. Acc: 87.52% | Test Loss: 0.339 | Test Acc: 87.98% |
+TEST ACCURACY: 87.98
+Epoch time : 66.62891054153442
+| Epoch: 18 | Train Loss: 0.228 | Train Acc: 91.36% | Val. Loss: 0.337 | Val. Acc: 87.59% | Test Loss: 0.337 | Test Acc: 87.32% |
+TEST ACCURACY: 87.32
+Epoch time : 67.82246804237366
+| Epoch: 19 | Train Loss: 0.218 | Train Acc: 91.50% | Val. Loss: 0.328 | Val. Acc: 88.26% | Test Loss: 0.333 | Test Acc: 88.22% |
+TEST ACCURACY: 88.22
+Epoch time : 65.64183402061462
+| Epoch: 20 | Train Loss: 0.208 | Train Acc: 92.14% | Val. Loss: 0.347 | Val. Acc: 87.54% | Test Loss: 0.349 | Test Acc: 87.74% |
+TEST ACCURACY: 88.22
+Epoch time : 65.4051148891449
+| Epoch: 21 | Train Loss: 0.197 | Train Acc: 92.55% | Val. Loss: 0.336 | Val. Acc: 88.36% | Test Loss: 0.339 | Test Acc: 88.21% |
+TEST ACCURACY: 88.21
+Epoch time : 66.06512427330017
+| Epoch: 22 | Train Loss: 0.193 | Train Acc: 92.56% | Val. Loss: 0.362 | Val. Acc: 88.02% | Test Loss: 0.371 | Test Acc: 87.97% |
+TEST ACCURACY: 88.21
+Epoch time : 67.55370163917542
+| Epoch: 23 | Train Loss: 0.179 | Train Acc: 92.99% | Val. Loss: 0.361 | Val. Acc: 88.10% | Test Loss: 0.368 | Test Acc: 88.02% |
+TEST ACCURACY: 88.21
+Epoch time : 66.81140637397766
+| Epoch: 24 | Train Loss: 0.173 | Train Acc: 93.51% | Val. Loss: 0.355 | Val. Acc: 88.51% | Test Loss: 0.367 | Test Acc: 88.10% |
+TEST ACCURACY: 88.1
+Epoch time : 65.33189225196838
+| Epoch: 25 | Train Loss: 0.166 | Train Acc: 93.88% | Val. Loss: 0.348 | Val. Acc: 88.10% | Test Loss: 0.351 | Test Acc: 88.36% |
+TEST ACCURACY: 88.1
+Epoch time : 65.55656862258911
+| Epoch: 26 | Train Loss: 0.160 | Train Acc: 93.97% | Val. Loss: 0.373 | Val. Acc: 88.46% | Test Loss: 0.381 | Test Acc: 88.33% |
+TEST ACCURACY: 88.1
+Epoch time : 66.48800086975098
+| Epoch: 27 | Train Loss: 0.166 | Train Acc: 93.59% | Val. Loss: 0.412 | Val. Acc: 87.57% | Test Loss: 0.418 | Test Acc: 87.50% |
+TEST ACCURACY: 88.1
+Epoch time : 67.73958802223206
+| Epoch: 28 | Train Loss: 0.146 | Train Acc: 94.83% | Val. Loss: 0.367 | Val. Acc: 88.72% | Test Loss: 0.375 | Test Acc: 88.86% |
+TEST ACCURACY: 88.86
+Epoch time : 65.55986094474792
+| Epoch: 29 | Train Loss: 0.138 | Train Acc: 94.87% | Val. Loss: 0.368 | Val. Acc: 88.88% | Test Loss: 0.371 | Test Acc: 88.71% |
+TEST ACCURACY: 88.71
+Epoch time : 65.29981446266174
+| Epoch: 30 | Train Loss: 0.131 | Train Acc: 95.05% | Val. Loss: 0.403 | Val. Acc: 87.42% | Test Loss: 0.410 | Test Acc: 87.24% |
+TEST ACCURACY: 88.71
+Epoch time : 65.93947100639343
+| Epoch: 31 | Train Loss: 0.132 | Train Acc: 95.15% | Val. Loss: 0.377 | Val. Acc: 88.34% | Test Loss: 0.388 | Test Acc: 88.25% |
+TEST ACCURACY: 88.71
+Epoch time : 67.36093616485596
+| Epoch: 32 | Train Loss: 0.129 | Train Acc: 95.20% | Val. Loss: 0.368 | Val. Acc: 88.38% | Test Loss: 0.374 | Test Acc: 88.19% |
+TEST ACCURACY: 88.71
+Epoch time : 66.84269738197327
+| Epoch: 33 | Train Loss: 0.121 | Train Acc: 95.61% | Val. Loss: 0.339 | Val. Acc: 88.99% | Test Loss: 0.349 | Test Acc: 88.65% |
+TEST ACCURACY: 88.65
+Epoch time : 65.39504766464233
+| Epoch: 34 | Train Loss: 0.112 | Train Acc: 95.84% | Val. Loss: 0.378 | Val. Acc: 88.20% | Test Loss: 0.390 | Test Acc: 88.01% |
+TEST ACCURACY: 88.65
+Epoch time : 65.59358525276184
+| Epoch: 35 | Train Loss: 0.105 | Train Acc: 96.22% | Val. Loss: 0.381 | Val. Acc: 88.92% | Test Loss: 0.394 | Test Acc: 88.41% |
+TEST ACCURACY: 88.65
+Epoch time : 66.40076947212219
+| Epoch: 36 | Train Loss: 0.104 | Train Acc: 96.12% | Val. Loss: 0.377 | Val. Acc: 89.11% | Test Loss: 0.389 | Test Acc: 88.71% |
+TEST ACCURACY: 88.71
+Epoch time : 67.94196033477783
+| Epoch: 37 | Train Loss: 0.101 | Train Acc: 96.27% | Val. Loss: 0.420 | Val. Acc: 88.27% | Test Loss: 0.439 | Test Acc: 87.87% |
+TEST ACCURACY: 88.71
+Epoch time : 65.67867231369019
+| Epoch: 38 | Train Loss: 0.093 | Train Acc: 96.65% | Val. Loss: 0.429 | Val. Acc: 88.24% | Test Loss: 0.446 | Test Acc: 87.89% |
+TEST ACCURACY: 88.71
+Epoch time : 65.35841345787048
+| Epoch: 39 | Train Loss: 0.092 | Train Acc: 96.78% | Val. Loss: 0.417 | Val. Acc: 87.92% | Test Loss: 0.435 | Test Acc: 87.54% |
+TEST ACCURACY: 88.71
+Epoch time : 65.80429172515869
+| Epoch: 40 | Train Loss: 0.086 | Train Acc: 96.85% | Val. Loss: 0.425 | Val. Acc: 88.49% | Test Loss: 0.443 | Test Acc: 87.94% |
+TEST ACCURACY: 88.71
+Epoch time : 67.17378878593445
+| Epoch: 41 | Train Loss: 0.083 | Train Acc: 97.01% | Val. Loss: 0.411 | Val. Acc: 88.82% | Test Loss: 0.423 | Test Acc: 88.36% |
+TEST ACCURACY: 88.71
+Epoch time : 66.93749976158142
+| Epoch: 42 | Train Loss: 0.087 | Train Acc: 96.72% | Val. Loss: 0.444 | Val. Acc: 88.17% | Test Loss: 0.462 | Test Acc: 87.65% |
+TEST ACCURACY: 88.71
+Epoch time : 65.44154095649719
+| Epoch: 43 | Train Loss: 0.074 | Train Acc: 97.48% | Val. Loss: 0.442 | Val. Acc: 88.32% | Test Loss: 0.464 | Test Acc: 87.63% |
+TEST ACCURACY: 88.71
+Epoch time : 65.60867810249329
+| Epoch: 44 | Train Loss: 0.076 | Train Acc: 97.27% | Val. Loss: 0.423 | Val. Acc: 88.58% | Test Loss: 0.433 | Test Acc: 88.33% |
+TEST ACCURACY: 88.71
+Epoch time : 66.43620038032532
+| Epoch: 45 | Train Loss: 0.071 | Train Acc: 97.54% | Val. Loss: 0.463 | Val. Acc: 88.62% | Test Loss: 0.478 | Test Acc: 88.17% |
+TEST ACCURACY: 88.71
+Epoch time : 68.10149264335632
+| Epoch: 46 | Train Loss: 0.066 | Train Acc: 97.66% | Val. Loss: 0.424 | Val. Acc: 88.78% | Test Loss: 0.435 | Test Acc: 88.30% |
+TEST ACCURACY: 88.71
+Epoch time : 65.87078642845154
+| Epoch: 47 | Train Loss: 0.066 | Train Acc: 97.72% | Val. Loss: 0.462 | Val. Acc: 88.14% | Test Loss: 0.479 | Test Acc: 87.82% |
+TEST ACCURACY: 88.71
+Epoch time : 65.44992089271545
+| Epoch: 48 | Train Loss: 0.060 | Train Acc: 97.90% | Val. Loss: 0.481 | Val. Acc: 89.09% | Test Loss: 0.499 | Test Acc: 88.52% |
+TEST ACCURACY: 88.71
+Epoch time : 65.93466854095459
+| Epoch: 49 | Train Loss: 0.058 | Train Acc: 97.99% | Val. Loss: 0.517 | Val. Acc: 88.21% | Test Loss: 0.539 | Test Acc: 87.90% |
+TEST ACCURACY: 88.71
+Epoch time : 67.24380731582642
+| Epoch: 50 | Train Loss: 0.058 | Train Acc: 97.93% | Val. Loss: 0.501 | Val. Acc: 87.25% | Test Loss: 0.520 | Test Acc: 86.98% |
+TEST ACCURACY: 88.71
+Epoch time : 67.45481586456299
+| Epoch: 51 | Train Loss: 0.053 | Train Acc: 98.15% | Val. Loss: 0.537 | Val. Acc: 87.03% | Test Loss: 0.552 | Test Acc: 87.02% |
+TEST ACCURACY: 88.71
+Epoch time : 65.44037294387817
+| Epoch: 52 | Train Loss: 0.051 | Train Acc: 98.15% | Val. Loss: 0.476 | Val. Acc: 89.09% | Test Loss: 0.494 | Test Acc: 88.78% |
+TEST ACCURACY: 88.71
+Epoch time : 65.4670181274414
+| Epoch: 53 | Train Loss: 0.053 | Train Acc: 98.13% | Val. Loss: 0.505 | Val. Acc: 88.08% | Test Loss: 0.524 | Test Acc: 87.86% |
+TEST ACCURACY: 88.71
+Epoch time : 66.34098219871521
+| Epoch: 54 | Train Loss: 0.049 | Train Acc: 98.28% | Val. Loss: 0.493 | Val. Acc: 88.10% | Test Loss: 0.517 | Test Acc: 87.90% |
+TEST ACCURACY: 88.71
+Epoch time : 67.93937063217163
+| Epoch: 55 | Train Loss: 0.051 | Train Acc: 98.19% | Val. Loss: 0.572 | Val. Acc: 87.41% | Test Loss: 0.602 | Test Acc: 87.14% |
+TEST ACCURACY: 88.71
+Epoch time : 65.79355192184448
+| Epoch: 56 | Train Loss: 0.047 | Train Acc: 98.32% | Val. Loss: 0.545 | Val. Acc: 87.66% | Test Loss: 0.577 | Test Acc: 87.30% |
+TEST ACCURACY: 88.71
+Epoch time : 65.30677008628845
+| Epoch: 57 | Train Loss: 0.045 | Train Acc: 98.50% | Val. Loss: 0.481 | Val. Acc: 88.81% | Test Loss: 0.505 | Test Acc: 88.48% |
+TEST ACCURACY: 88.71
+Epoch time : 65.73938536643982
+| Epoch: 58 | Train Loss: 0.042 | Train Acc: 98.56% | Val. Loss: 0.466 | Val. Acc: 89.02% | Test Loss: 0.489 | Test Acc: 88.72% |
+TEST ACCURACY: 88.71
+Epoch time : 67.0345139503479
+| Epoch: 59 | Train Loss: 0.041 | Train Acc: 98.51% | Val. Loss: 0.607 | Val. Acc: 86.71% | Test Loss: 0.637 | Test Acc: 86.46% |
+TEST ACCURACY: 88.71
+Epoch time : 67.2960376739502
+| Epoch: 60 | Train Loss: 0.043 | Train Acc: 98.50% | Val. Loss: 0.567 | Val. Acc: 87.47% | Test Loss: 0.601 | Test Acc: 87.00% |
+TEST ACCURACY: 88.71
+Epoch time : 65.29490971565247
+| Epoch: 61 | Train Loss: 0.040 | Train Acc: 98.57% | Val. Loss: 0.510 | Val. Acc: 88.68% | Test Loss: 0.535 | Test Acc: 88.26% |
+TEST ACCURACY: 88.71
+Epoch time : 65.41906785964966
+| Epoch: 62 | Train Loss: 0.035 | Train Acc: 98.83% | Val. Loss: 0.569 | Val. Acc: 87.80% | Test Loss: 0.606 | Test Acc: 87.32% |
+TEST ACCURACY: 88.71
+Epoch time : 66.26618528366089
+| Epoch: 63 | Train Loss: 0.034 | Train Acc: 98.86% | Val. Loss: 0.530 | Val. Acc: 88.83% | Test Loss: 0.564 | Test Acc: 88.20% |
+TEST ACCURACY: 88.71
+Epoch time : 67.95009326934814
+| Epoch: 64 | Train Loss: 0.030 | Train Acc: 98.93% | Val. Loss: 0.589 | Val. Acc: 88.33% | Test Loss: 0.620 | Test Acc: 87.95% |
+TEST ACCURACY: 88.71
+Epoch time : 65.97394251823425
+| Epoch: 65 | Train Loss: 0.034 | Train Acc: 98.84% | Val. Loss: 0.616 | Val. Acc: 88.13% | Test Loss: 0.657 | Test Acc: 87.64% |
+TEST ACCURACY: 88.71
+Epoch time : 65.2582221031189
+| Epoch: 66 | Train Loss: 0.037 | Train Acc: 98.66% | Val. Loss: 0.631 | Val. Acc: 87.28% | Test Loss: 0.661 | Test Acc: 86.81% |
+TEST ACCURACY: 88.71
+Epoch time : 65.17318058013916
+| Epoch: 67 | Train Loss: 0.031 | Train Acc: 98.90% | Val. Loss: 0.537 | Val. Acc: 88.68% | Test Loss: 0.571 | Test Acc: 88.45% |
+TEST ACCURACY: 88.71
+Epoch time : 65.05797052383423
+| Epoch: 68 | Train Loss: 0.031 | Train Acc: 98.87% | Val. Loss: 0.605 | Val. Acc: 88.17% | Test Loss: 0.636 | Test Acc: 87.53% |
+TEST ACCURACY: 88.71
+Epoch time : 65.1346378326416
+| Epoch: 69 | Train Loss: 0.030 | Train Acc: 98.99% | Val. Loss: 0.570 | Val. Acc: 88.77% | Test Loss: 0.600 | Test Acc: 88.28% |
+TEST ACCURACY: 88.71
+Epoch time : 65.22806215286255
+| Epoch: 70 | Train Loss: 0.032 | Train Acc: 98.88% | Val. Loss: 0.595 | Val. Acc: 88.50% | Test Loss: 0.635 | Test Acc: 87.98% |
+TEST ACCURACY: 88.71
+Epoch time : 65.20529413223267
+| Epoch: 71 | Train Loss: 0.026 | Train Acc: 99.14% | Val. Loss: 0.640 | Val. Acc: 88.40% | Test Loss: 0.686 | Test Acc: 87.94% |
+TEST ACCURACY: 88.71
+Epoch time : 65.15912175178528
+| Epoch: 72 | Train Loss: 0.025 | Train Acc: 99.12% | Val. Loss: 0.679 | Val. Acc: 87.93% | Test Loss: 0.715 | Test Acc: 87.43% |
+TEST ACCURACY: 88.71
+Epoch time : 65.26034283638
+| Epoch: 73 | Train Loss: 0.027 | Train Acc: 99.11% | Val. Loss: 0.628 | Val. Acc: 88.18% | Test Loss: 0.663 | Test Acc: 87.82% |
+TEST ACCURACY: 88.71
+Epoch time : 65.18279910087585
+| Epoch: 74 | Train Loss: 0.026 | Train Acc: 99.12% | Val. Loss: 0.653 | Val. Acc: 87.97% | Test Loss: 0.691 | Test Acc: 87.30% |
+TEST ACCURACY: 88.71
+Epoch time : 65.21942973136902
+| Epoch: 75 | Train Loss: 0.027 | Train Acc: 99.13% | Val. Loss: 0.538 | Val. Acc: 88.46% | Test Loss: 0.566 | Test Acc: 87.90% |
+TEST ACCURACY: 88.71
+Epoch time : 65.52954983711243
+| Epoch: 76 | Train Loss: 0.021 | Train Acc: 99.25% | Val. Loss: 0.681 | Val. Acc: 87.52% | Test Loss: 0.718 | Test Acc: 87.25% |
+TEST ACCURACY: 88.71
+Epoch time : 66.59938955307007
+| Epoch: 77 | Train Loss: 0.022 | Train Acc: 99.24% | Val. Loss: 0.652 | Val. Acc: 88.51% | Test Loss: 0.687 | Test Acc: 87.81% |
+TEST ACCURACY: 88.71
+Epoch time : 68.06785893440247
+| Epoch: 78 | Train Loss: 0.026 | Train Acc: 99.12% | Val. Loss: 0.548 | Val. Acc: 88.58% | Test Loss: 0.574 | Test Acc: 88.04% |
+TEST ACCURACY: 88.71
+Epoch time : 65.79581952095032
+| Epoch: 79 | Train Loss: 0.025 | Train Acc: 99.12% | Val. Loss: 0.683 | Val. Acc: 87.57% | Test Loss: 0.723 | Test Acc: 87.14% |
+TEST ACCURACY: 88.71
+Epoch time : 65.46820950508118
+| Epoch: 80 | Train Loss: 0.019 | Train Acc: 99.28% | Val. Loss: 0.645 | Val. Acc: 88.06% | Test Loss: 0.677 | Test Acc: 87.66% |
+TEST ACCURACY: 88.71
+Epoch time : 66.04720211029053
+| Epoch: 81 | Train Loss: 0.026 | Train Acc: 99.11% | Val. Loss: 0.673 | Val. Acc: 88.56% | Test Loss: 0.705 | Test Acc: 88.01% |
+TEST ACCURACY: 88.71
+Epoch time : 67.65312123298645
+| Epoch: 82 | Train Loss: 0.019 | Train Acc: 99.32% | Val. Loss: 0.697 | Val. Acc: 88.46% | Test Loss: 0.721 | Test Acc: 87.91% |
+TEST ACCURACY: 88.71
+Epoch time : 66.7410888671875
+| Epoch: 83 | Train Loss: 0.019 | Train Acc: 99.38% | Val. Loss: 0.729 | Val. Acc: 88.60% | Test Loss: 0.754 | Test Acc: 88.16% |
+TEST ACCURACY: 88.71
+Epoch time : 65.36905908584595
+| Epoch: 84 | Train Loss: 0.021 | Train Acc: 99.25% | Val. Loss: 0.700 | Val. Acc: 88.30% | Test Loss: 0.736 | Test Acc: 87.73% |
+TEST ACCURACY: 88.71
+Epoch time : 65.79300236701965
+| Epoch: 85 | Train Loss: 0.019 | Train Acc: 99.37% | Val. Loss: 0.678 | Val. Acc: 88.54% | Test Loss: 0.712 | Test Acc: 87.75% |
+TEST ACCURACY: 88.71
+Epoch time : 66.77840542793274
+| Epoch: 86 | Train Loss: 0.020 | Train Acc: 99.36% | Val. Loss: 0.729 | Val. Acc: 87.61% | Test Loss: 0.769 | Test Acc: 87.18% |
+TEST ACCURACY: 88.71
+Epoch time : 68.10407662391663
+| Epoch: 87 | Train Loss: 0.019 | Train Acc: 99.38% | Val. Loss: 0.637 | Val. Acc: 88.07% | Test Loss: 0.673 | Test Acc: 87.54% |
+TEST ACCURACY: 88.71
+Epoch time : 65.90668654441833
+| Epoch: 88 | Train Loss: 0.016 | Train Acc: 99.43% | Val. Loss: 0.757 | Val. Acc: 87.42% | Test Loss: 0.791 | Test Acc: 87.18% |
+TEST ACCURACY: 88.71
+Epoch time : 65.64980006217957
+| Epoch: 89 | Train Loss: 0.025 | Train Acc: 99.14% | Val. Loss: 0.580 | Val. Acc: 88.79% | Test Loss: 0.601 | Test Acc: 88.19% |
+TEST ACCURACY: 88.71
+Epoch time : 66.38456010818481
+| Epoch: 90 | Train Loss: 0.019 | Train Acc: 99.38% | Val. Loss: 0.699 | Val. Acc: 88.82% | Test Loss: 0.729 | Test Acc: 87.96% |
+TEST ACCURACY: 88.71
+Epoch time : 67.53237771987915
+| Epoch: 91 | Train Loss: 0.015 | Train Acc: 99.49% | Val. Loss: 0.714 | Val. Acc: 88.09% | Test Loss: 0.744 | Test Acc: 87.51% |
+TEST ACCURACY: 88.71
+Epoch time : 66.85881686210632
+| Epoch: 92 | Train Loss: 0.016 | Train Acc: 99.43% | Val. Loss: 0.631 | Val. Acc: 88.77% | Test Loss: 0.680 | Test Acc: 88.08% |
+TEST ACCURACY: 88.71
+Epoch time : 65.47581481933594
+| Epoch: 93 | Train Loss: 0.018 | Train Acc: 99.37% | Val. Loss: 0.716 | Val. Acc: 88.18% | Test Loss: 0.766 | Test Acc: 87.50% |
+TEST ACCURACY: 88.71
+Epoch time : 65.66389846801758
+| Epoch: 94 | Train Loss: 0.019 | Train Acc: 99.37% | Val. Loss: 0.676 | Val. Acc: 88.31% | Test Loss: 0.722 | Test Acc: 87.66% |
+TEST ACCURACY: 88.71
+Epoch time : 66.55076098442078
+| Epoch: 95 | Train Loss: 0.018 | Train Acc: 99.40% | Val. Loss: 0.754 | Val. Acc: 86.83% | Test Loss: 0.792 | Test Acc: 86.44% |
+TEST ACCURACY: 88.71
+Epoch time : 67.97889423370361
+| Epoch: 96 | Train Loss: 0.017 | Train Acc: 99.43% | Val. Loss: 0.690 | Val. Acc: 88.55% | Test Loss: 0.739 | Test Acc: 87.70% |
+TEST ACCURACY: 88.71
+Epoch time : 65.75629925727844
+| Epoch: 97 | Train Loss: 0.017 | Train Acc: 99.37% | Val. Loss: 0.722 | Val. Acc: 88.02% | Test Loss: 0.767 | Test Acc: 87.33% |
+TEST ACCURACY: 88.71
+Epoch time : 65.30862474441528
+| Epoch: 98 | Train Loss: 0.012 | Train Acc: 99.58% | Val. Loss: 0.748 | Val. Acc: 88.02% | Test Loss: 0.795 | Test Acc: 87.38% |
+TEST ACCURACY: 88.71
+Epoch time : 65.2498128414154
+| Epoch: 99 | Train Loss: 0.012 | Train Acc: 99.59% | Val. Loss: 0.715 | Val. Acc: 88.35% | Test Loss: 0.767 | Test Acc: 87.56% |
+TEST ACCURACY: 88.71
+Epoch time : 65.29003691673279
+| Epoch: 100 | Train Loss: 0.014 | Train Acc: 99.49% | Val. Loss: 0.652 | Val. Acc: 88.40% | Test Loss: 0.706 | Test Acc: 87.82% |
+TEST ACCURACY: 88.71
+Epoch time : 65.26714158058167

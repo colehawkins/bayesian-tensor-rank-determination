@@ -1,0 +1,615 @@
+Namespace(activation_function='relu', arch_embedding_size='4-3-2', arch_interaction_itself=False, arch_interaction_op='dot', arch_mlp_bot='13-512-256-256-128', arch_mlp_top='512-256-1', arch_sparse_feature_size=128, data_generation='dataset', data_randomize='total', data_set='kaggle', data_size=1, data_sub_sample_rate=0.0, data_trace_enable_padding=False, data_trace_file='./input/dist_emb_j.log', debug_mode=False, enable_profiling=False, inference_only=False, kl_multiplier=0.0, learning_rate=0.001, load_model='saved_models/safe/full', load_saved=1, loss_function='bce', loss_threshold=0.0, loss_weights='1.0-1.0', lr_decay_start_step=0, lr_num_decay_steps=0, lr_num_warmup_steps=0, max_ind_range=-1, md_flag=False, md_round_dims=False, md_temperature=0.3, md_threshold=200, memory_map=True, mini_batch_size=512, mlperf_acc_threshold=0.0, mlperf_auc_threshold=0.0, mlperf_bin_loader=False, mlperf_bin_shuffle=False, mlperf_logging=False, nepochs=1, no_kl_steps=50000, num_batches=0, num_indices_per_lookup=10, num_indices_per_lookup_fixed=False, num_workers=0, numpy_rand_seed=123, optimizer='SGD', plot_compute_graph=False, print_freq=512, print_precision=5, print_time=False, processed_data_file='./input/kaggleAdDisplayChallenge_processed.npz', qr_collisions=4, qr_flag=False, qr_operation='mult', qr_threshold=200, raw_data_file='./input/train.txt', round_targets=True, save_model='', save_onnx=False, sync_dense_params=True, tensor_type='Tucker', test_freq=1024, test_mini_batch_size=-1, test_num_workers=16, use_gpu=False)
+Using CPU...
+Reading pre-processed data=./input/kaggleAdDisplayChallenge_processed.npz
+Sparse features= 26, Dense features= 13
+Reading pre-processed data=./input/kaggleAdDisplayChallenge_processed.npz
+Sparse features= 26, Dense features= 13
+Embedding 0 size 1460x128
+Embedding 1 size 583x128
+Embedding 2 size 10131227x128
+Embedding 3 size 2202608x128
+Embedding 4 size 305x128
+Embedding 5 size 24x128
+Embedding 6 size 12517x128
+Embedding 7 size 633x128
+Embedding 8 size 3x128
+Embedding 9 size 93145x128
+Embedding 10 size 5683x128
+Embedding 11 size 8351593x128
+Embedding 12 size 3194x128
+Embedding 13 size 27x128
+Embedding 14 size 14992x128
+Embedding 15 size 5461306x128
+Embedding 16 size 10x128
+Embedding 17 size 5652x128
+Embedding 18 size 2173x128
+Embedding 19 size 4x128
+Embedding 20 size 7046547x128
+Embedding 21 size 18x128
+Embedding 22 size 15x128
+Embedding 23 size 286181x128
+Embedding 24 size 105x128
+Embedding 25 size 142572x128
+Loading saved model saved_models/safe/full
+Saved at: epoch = 0/1, batch = 306969/306969, ntbatch = 25581
+Training state: loss = 0.447980, accuracy = 79.230 %
+Testing state: loss = 0.453967, accuracy = 78.776 %
+Before compression
+<bound method Module.parameters of DLRM_Net(
+  (emb_l): ModuleList(
+    (0): EmbeddingBag(1460, 128, mode=sum)
+    (1): EmbeddingBag(583, 128, mode=sum)
+    (2): EmbeddingBag(10131227, 128, mode=sum)
+    (3): EmbeddingBag(2202608, 128, mode=sum)
+    (4): EmbeddingBag(305, 128, mode=sum)
+    (5): EmbeddingBag(24, 128, mode=sum)
+    (6): EmbeddingBag(12517, 128, mode=sum)
+    (7): EmbeddingBag(633, 128, mode=sum)
+    (8): EmbeddingBag(3, 128, mode=sum)
+    (9): EmbeddingBag(93145, 128, mode=sum)
+    (10): EmbeddingBag(5683, 128, mode=sum)
+    (11): EmbeddingBag(8351593, 128, mode=sum)
+    (12): EmbeddingBag(3194, 128, mode=sum)
+    (13): EmbeddingBag(27, 128, mode=sum)
+    (14): EmbeddingBag(14992, 128, mode=sum)
+    (15): EmbeddingBag(5461306, 128, mode=sum)
+    (16): EmbeddingBag(10, 128, mode=sum)
+    (17): EmbeddingBag(5652, 128, mode=sum)
+    (18): EmbeddingBag(2173, 128, mode=sum)
+    (19): EmbeddingBag(4, 128, mode=sum)
+    (20): EmbeddingBag(7046547, 128, mode=sum)
+    (21): EmbeddingBag(18, 128, mode=sum)
+    (22): EmbeddingBag(15, 128, mode=sum)
+    (23): EmbeddingBag(286181, 128, mode=sum)
+    (24): EmbeddingBag(105, 128, mode=sum)
+    (25): EmbeddingBag(142572, 128, mode=sum)
+  )
+  (bot_l): Sequential(
+    (0): Linear(in_features=13, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=256, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=256, out_features=128, bias=True)
+    (7): ReLU()
+  )
+  (top_l): Sequential(
+    (0): Linear(in_features=479, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)>
+test acc 2579383.000000 test loss 1486438.894255 test_sample 3274330.000000
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+Shape  [[200, 220, 250], [128]]
+init tensor shape torch.Size([10131227, 128])
+Shape  [[125, 130, 136], [128]]
+init tensor shape torch.Size([2202608, 128])
+Shape  [[200, 200, 209], [128]]
+init tensor shape torch.Size([8351593, 128])
+Shape  [[166, 175, 188], [128]]
+init tensor shape torch.Size([5461306, 128])
+Shape  [[200, 200, 200], [128]]
+init tensor shape torch.Size([7046547, 128])
+After compression
+<bound method Module.parameters of DLRM_Net(
+  (emb_l): ModuleList(
+    (0): EmbeddingBag(1460, 128, mode=sum)
+    (1): EmbeddingBag(583, 128, mode=sum)
+    (2): TensorizedEmbedding(
+      (tensor): Tucker(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 22x22x22x22]
+            (1): Parameter containing: [torch.FloatTensor of size 200x22]
+            (2): Parameter containing: [torch.FloatTensor of size 220x22]
+            (3): Parameter containing: [torch.FloatTensor of size 250x22]
+            (4): Parameter containing: [torch.FloatTensor of size 128x22]
+            (5): Parameter containing: [torch.FloatTensor of size 22x22x22x22]
+            (6): Parameter containing: [torch.FloatTensor of size 200x22]
+            (7): Parameter containing: [torch.FloatTensor of size 220x22]
+            (8): Parameter containing: [torch.FloatTensor of size 250x22]
+            (9): Parameter containing: [torch.FloatTensor of size 128x22]
+            (10): Parameter containing: [torch.FloatTensor of size 22]
+            (11): Parameter containing: [torch.FloatTensor of size 22]
+            (12): Parameter containing: [torch.FloatTensor of size 22]
+            (13): Parameter containing: [torch.FloatTensor of size 22]
+        )
+      )
+    )
+    (3): TensorizedEmbedding(
+      (tensor): Tucker(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 20x20x20x20]
+            (1): Parameter containing: [torch.FloatTensor of size 125x20]
+            (2): Parameter containing: [torch.FloatTensor of size 130x20]
+            (3): Parameter containing: [torch.FloatTensor of size 136x20]
+            (4): Parameter containing: [torch.FloatTensor of size 128x20]
+            (5): Parameter containing: [torch.FloatTensor of size 20x20x20x20]
+            (6): Parameter containing: [torch.FloatTensor of size 125x20]
+            (7): Parameter containing: [torch.FloatTensor of size 130x20]
+            (8): Parameter containing: [torch.FloatTensor of size 136x20]
+            (9): Parameter containing: [torch.FloatTensor of size 128x20]
+            (10): Parameter containing: [torch.FloatTensor of size 20]
+            (11): Parameter containing: [torch.FloatTensor of size 20]
+            (12): Parameter containing: [torch.FloatTensor of size 20]
+            (13): Parameter containing: [torch.FloatTensor of size 20]
+        )
+      )
+    )
+    (4): EmbeddingBag(305, 128, mode=sum)
+    (5): EmbeddingBag(24, 128, mode=sum)
+    (6): EmbeddingBag(12517, 128, mode=sum)
+    (7): EmbeddingBag(633, 128, mode=sum)
+    (8): EmbeddingBag(3, 128, mode=sum)
+    (9): EmbeddingBag(93145, 128, mode=sum)
+    (10): EmbeddingBag(5683, 128, mode=sum)
+    (11): TensorizedEmbedding(
+      (tensor): Tucker(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 22x22x22x22]
+            (1): Parameter containing: [torch.FloatTensor of size 200x22]
+            (2): Parameter containing: [torch.FloatTensor of size 200x22]
+            (3): Parameter containing: [torch.FloatTensor of size 209x22]
+            (4): Parameter containing: [torch.FloatTensor of size 128x22]
+            (5): Parameter containing: [torch.FloatTensor of size 22x22x22x22]
+            (6): Parameter containing: [torch.FloatTensor of size 200x22]
+            (7): Parameter containing: [torch.FloatTensor of size 200x22]
+            (8): Parameter containing: [torch.FloatTensor of size 209x22]
+            (9): Parameter containing: [torch.FloatTensor of size 128x22]
+            (10): Parameter containing: [torch.FloatTensor of size 22]
+            (11): Parameter containing: [torch.FloatTensor of size 22]
+            (12): Parameter containing: [torch.FloatTensor of size 22]
+            (13): Parameter containing: [torch.FloatTensor of size 22]
+        )
+      )
+    )
+    (12): EmbeddingBag(3194, 128, mode=sum)
+    (13): EmbeddingBag(27, 128, mode=sum)
+    (14): EmbeddingBag(14992, 128, mode=sum)
+    (15): TensorizedEmbedding(
+      (tensor): Tucker(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 21x21x21x21]
+            (1): Parameter containing: [torch.FloatTensor of size 166x21]
+            (2): Parameter containing: [torch.FloatTensor of size 175x21]
+            (3): Parameter containing: [torch.FloatTensor of size 188x21]
+            (4): Parameter containing: [torch.FloatTensor of size 128x21]
+            (5): Parameter containing: [torch.FloatTensor of size 21x21x21x21]
+            (6): Parameter containing: [torch.FloatTensor of size 166x21]
+            (7): Parameter containing: [torch.FloatTensor of size 175x21]
+            (8): Parameter containing: [torch.FloatTensor of size 188x21]
+            (9): Parameter containing: [torch.FloatTensor of size 128x21]
+            (10): Parameter containing: [torch.FloatTensor of size 21]
+            (11): Parameter containing: [torch.FloatTensor of size 21]
+            (12): Parameter containing: [torch.FloatTensor of size 21]
+            (13): Parameter containing: [torch.FloatTensor of size 21]
+        )
+      )
+    )
+    (16): EmbeddingBag(10, 128, mode=sum)
+    (17): EmbeddingBag(5652, 128, mode=sum)
+    (18): EmbeddingBag(2173, 128, mode=sum)
+    (19): EmbeddingBag(4, 128, mode=sum)
+    (20): TensorizedEmbedding(
+      (tensor): Tucker(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 22x22x22x22]
+            (1): Parameter containing: [torch.FloatTensor of size 200x22]
+            (2): Parameter containing: [torch.FloatTensor of size 200x22]
+            (3): Parameter containing: [torch.FloatTensor of size 200x22]
+            (4): Parameter containing: [torch.FloatTensor of size 128x22]
+            (5): Parameter containing: [torch.FloatTensor of size 22x22x22x22]
+            (6): Parameter containing: [torch.FloatTensor of size 200x22]
+            (7): Parameter containing: [torch.FloatTensor of size 200x22]
+            (8): Parameter containing: [torch.FloatTensor of size 200x22]
+            (9): Parameter containing: [torch.FloatTensor of size 128x22]
+            (10): Parameter containing: [torch.FloatTensor of size 22]
+            (11): Parameter containing: [torch.FloatTensor of size 22]
+            (12): Parameter containing: [torch.FloatTensor of size 22]
+            (13): Parameter containing: [torch.FloatTensor of size 22]
+        )
+      )
+    )
+    (21): EmbeddingBag(18, 128, mode=sum)
+    (22): EmbeddingBag(15, 128, mode=sum)
+    (23): EmbeddingBag(286181, 128, mode=sum)
+    (24): EmbeddingBag(105, 128, mode=sum)
+    (25): EmbeddingBag(142572, 128, mode=sum)
+  )
+  (bot_l): Sequential(
+    (0): Linear(in_features=13, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=256, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=256, out_features=128, bias=True)
+    (7): ReLU()
+  )
+  (top_l): Sequential(
+    (0): Linear(in_features=479, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)>
+test acc 2571356.000000 test loss 1500588.155313 test_sample 3274330.000000
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+time/loss/accuracy (if enabled):
+Finished training it 512/76743 of epoch 0, -1.00 ms/it, loss 0.452050, accuracy 78.926 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 1024/76743 of epoch 0, -1.00 ms/it, loss 0.454320, accuracy 78.786 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 1024/76743 of epoch 0, loss 0.457264, accuracy 78.588 %, best 78.776 %
+Finished training it 1536/76743 of epoch 0, -1.00 ms/it, loss 0.451906, accuracy 78.942 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 2048/76743 of epoch 0, -1.00 ms/it, loss 0.450463, accuracy 78.991 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 2048/76743 of epoch 0, loss 0.456939, accuracy 78.604 %, best 78.776 %
+Finished training it 2560/76743 of epoch 0, -1.00 ms/it, loss 0.451640, accuracy 78.964 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 3072/76743 of epoch 0, -1.00 ms/it, loss 0.451261, accuracy 78.954 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 3072/76743 of epoch 0, loss 0.456750, accuracy 78.615 %, best 78.776 %
+Finished training it 3584/76743 of epoch 0, -1.00 ms/it, loss 0.449498, accuracy 79.079 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 4096/76743 of epoch 0, -1.00 ms/it, loss 0.451942, accuracy 78.981 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 4096/76743 of epoch 0, loss 0.456613, accuracy 78.624 %, best 78.776 %
+Finished training it 4608/76743 of epoch 0, -1.00 ms/it, loss 0.451028, accuracy 79.007 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 5120/76743 of epoch 0, -1.00 ms/it, loss 0.451123, accuracy 78.981 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 5120/76743 of epoch 0, loss 0.456546, accuracy 78.624 %, best 78.776 %
+Finished training it 5632/76743 of epoch 0, -1.00 ms/it, loss 0.451146, accuracy 78.979 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 6144/76743 of epoch 0, -1.00 ms/it, loss 0.450314, accuracy 79.100 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 6144/76743 of epoch 0, loss 0.456405, accuracy 78.631 %, best 78.776 %
+Finished training it 6656/76743 of epoch 0, -1.00 ms/it, loss 0.451309, accuracy 78.950 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 7168/76743 of epoch 0, -1.00 ms/it, loss 0.450731, accuracy 79.071 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 7168/76743 of epoch 0, loss 0.456295, accuracy 78.639 %, best 78.776 %
+Finished training it 7680/76743 of epoch 0, -1.00 ms/it, loss 0.449575, accuracy 79.059 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 8192/76743 of epoch 0, -1.00 ms/it, loss 0.451177, accuracy 79.010 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 8192/76743 of epoch 0, loss 0.456240, accuracy 78.643 %, best 78.776 %
+Finished training it 8704/76743 of epoch 0, -1.00 ms/it, loss 0.449691, accuracy 79.174 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 9216/76743 of epoch 0, -1.00 ms/it, loss 0.450122, accuracy 79.024 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 9216/76743 of epoch 0, loss 0.456172, accuracy 78.642 %, best 78.776 %
+Finished training it 9728/76743 of epoch 0, -1.00 ms/it, loss 0.449911, accuracy 79.094 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 10240/76743 of epoch 0, -1.00 ms/it, loss 0.450121, accuracy 79.073 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 10240/76743 of epoch 0, loss 0.456069, accuracy 78.653 %, best 78.776 %
+Finished training it 10752/76743 of epoch 0, -1.00 ms/it, loss 0.448084, accuracy 79.171 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 11264/76743 of epoch 0, -1.00 ms/it, loss 0.450643, accuracy 79.038 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 11264/76743 of epoch 0, loss 0.456009, accuracy 78.653 %, best 78.776 %
+Finished training it 11776/76743 of epoch 0, -1.00 ms/it, loss 0.450456, accuracy 79.065 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 12288/76743 of epoch 0, -1.00 ms/it, loss 0.449023, accuracy 79.170 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 12288/76743 of epoch 0, loss 0.456043, accuracy 78.650 %, best 78.776 %
+Finished training it 12800/76743 of epoch 0, -1.00 ms/it, loss 0.450343, accuracy 79.060 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 13312/76743 of epoch 0, -1.00 ms/it, loss 0.450848, accuracy 79.065 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 13312/76743 of epoch 0, loss 0.455970, accuracy 78.658 %, best 78.776 %
+Finished training it 13824/76743 of epoch 0, -1.00 ms/it, loss 0.448223, accuracy 79.189 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 14336/76743 of epoch 0, -1.00 ms/it, loss 0.448758, accuracy 79.169 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 14336/76743 of epoch 0, loss 0.455988, accuracy 78.654 %, best 78.776 %
+Finished training it 14848/76743 of epoch 0, -1.00 ms/it, loss 0.448989, accuracy 79.070 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 15360/76743 of epoch 0, -1.00 ms/it, loss 0.448123, accuracy 79.144 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 15360/76743 of epoch 0, loss 0.455868, accuracy 78.658 %, best 78.776 %
+Finished training it 15872/76743 of epoch 0, -1.00 ms/it, loss 0.448040, accuracy 79.166 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 16384/76743 of epoch 0, -1.00 ms/it, loss 0.448960, accuracy 79.203 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 16384/76743 of epoch 0, loss 0.455794, accuracy 78.662 %, best 78.776 %
+Finished training it 16896/76743 of epoch 0, -1.00 ms/it, loss 0.450605, accuracy 79.032 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 17408/76743 of epoch 0, -1.00 ms/it, loss 0.450468, accuracy 79.035 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 17408/76743 of epoch 0, loss 0.455764, accuracy 78.661 %, best 78.776 %
+Finished training it 17920/76743 of epoch 0, -1.00 ms/it, loss 0.448006, accuracy 79.161 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 18432/76743 of epoch 0, -1.00 ms/it, loss 0.449583, accuracy 79.089 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 18432/76743 of epoch 0, loss 0.455745, accuracy 78.661 %, best 78.776 %
+Finished training it 18944/76743 of epoch 0, -1.00 ms/it, loss 0.452041, accuracy 78.954 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 19456/76743 of epoch 0, -1.00 ms/it, loss 0.446335, accuracy 79.285 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 19456/76743 of epoch 0, loss 0.455634, accuracy 78.668 %, best 78.776 %
+Finished training it 19968/76743 of epoch 0, -1.00 ms/it, loss 0.450380, accuracy 79.097 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 20480/76743 of epoch 0, -1.00 ms/it, loss 0.449780, accuracy 79.071 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 20480/76743 of epoch 0, loss 0.455630, accuracy 78.670 %, best 78.776 %
+Finished training it 20992/76743 of epoch 0, -1.00 ms/it, loss 0.448356, accuracy 79.277 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 21504/76743 of epoch 0, -1.00 ms/it, loss 0.450028, accuracy 79.136 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 21504/76743 of epoch 0, loss 0.455604, accuracy 78.670 %, best 78.776 %
+Finished training it 22016/76743 of epoch 0, -1.00 ms/it, loss 0.447791, accuracy 79.157 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 22528/76743 of epoch 0, -1.00 ms/it, loss 0.450517, accuracy 78.947 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 22528/76743 of epoch 0, loss 0.455653, accuracy 78.672 %, best 78.776 %
+Finished training it 23040/76743 of epoch 0, -1.00 ms/it, loss 0.449094, accuracy 79.220 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 23552/76743 of epoch 0, -1.00 ms/it, loss 0.447708, accuracy 79.147 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 23552/76743 of epoch 0, loss 0.455532, accuracy 78.670 %, best 78.776 %
+Finished training it 24064/76743 of epoch 0, -1.00 ms/it, loss 0.448788, accuracy 79.108 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 24576/76743 of epoch 0, -1.00 ms/it, loss 0.449165, accuracy 79.099 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 24576/76743 of epoch 0, loss 0.455478, accuracy 78.679 %, best 78.776 %
+Finished training it 25088/76743 of epoch 0, -1.00 ms/it, loss 0.447535, accuracy 79.224 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 25600/76743 of epoch 0, -1.00 ms/it, loss 0.447939, accuracy 79.180 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 25600/76743 of epoch 0, loss 0.455442, accuracy 78.677 %, best 78.776 %
+Finished training it 26112/76743 of epoch 0, -1.00 ms/it, loss 0.448181, accuracy 79.181 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 26624/76743 of epoch 0, -1.00 ms/it, loss 0.448782, accuracy 79.105 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 26624/76743 of epoch 0, loss 0.455435, accuracy 78.680 %, best 78.776 %
+Finished training it 27136/76743 of epoch 0, -1.00 ms/it, loss 0.447981, accuracy 79.224 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 27648/76743 of epoch 0, -1.00 ms/it, loss 0.450143, accuracy 79.097 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Testing at - 27648/76743 of epoch 0, loss 0.455429, accuracy 78.678 %, best 78.776 %
+Finished training it 28160/76743 of epoch 0, -1.00 ms/it, loss 0.448720, accuracy 79.152 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Finished training it 28672/76743 of epoch 0, -1.00 ms/it, loss 0.452219, accuracy 78.848 %
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [20, 20, 20, 20]
+Tensor type  tucker  rank  [22, 22, 22, 22]
+Tensor type  tucker  rank  [21, 21, 21, 21]
+Tensor type  tucker  rank  [22, 22, 22, 22]

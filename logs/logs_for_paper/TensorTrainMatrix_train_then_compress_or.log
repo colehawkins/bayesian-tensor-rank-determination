@@ -1,0 +1,1213 @@
+Namespace(activation_function='relu', arch_embedding_size='4-3-2', arch_interaction_itself=False, arch_interaction_op='dot', arch_mlp_bot='13-512-256-256-128', arch_mlp_top='512-256-1', arch_sparse_feature_size=128, data_generation='dataset', data_randomize='total', data_set='kaggle', data_size=1, data_sub_sample_rate=0.0, data_trace_enable_padding=False, data_trace_file='./input/dist_emb_j.log', debug_mode=False, enable_profiling=False, inference_only=False, kl_multiplier=0.0, learning_rate=0.001, load_model='saved_models/safe/full', load_saved=1, loss_function='bce', loss_threshold=0.0, loss_weights='1.0-1.0', lr_decay_start_step=0, lr_num_decay_steps=0, lr_num_warmup_steps=0, max_ind_range=-1, md_flag=False, md_round_dims=False, md_temperature=0.3, md_threshold=200, memory_map=True, mini_batch_size=512, mlperf_acc_threshold=0.0, mlperf_auc_threshold=0.0, mlperf_bin_loader=False, mlperf_bin_shuffle=False, mlperf_logging=False, nepochs=1, no_kl_steps=50000, num_batches=0, num_indices_per_lookup=10, num_indices_per_lookup_fixed=False, num_workers=0, numpy_rand_seed=123, optimizer='SGD', plot_compute_graph=False, print_freq=512, print_precision=5, print_time=False, processed_data_file='./input/kaggleAdDisplayChallenge_processed.npz', qr_collisions=4, qr_flag=False, qr_operation='mult', qr_threshold=200, raw_data_file='./input/train.txt', round_targets=True, save_model='', save_onnx=False, sync_dense_params=True, tensor_type='TensorTrainMatrix', test_freq=1024, test_mini_batch_size=-1, test_num_workers=16, use_gpu=False)
+Using CPU...
+Reading pre-processed data=./input/kaggleAdDisplayChallenge_processed.npz
+Sparse features= 26, Dense features= 13
+Reading pre-processed data=./input/kaggleAdDisplayChallenge_processed.npz
+Sparse features= 26, Dense features= 13
+Embedding 0 size 1460x128
+Embedding 1 size 583x128
+Embedding 2 size 10131227x128
+Embedding 3 size 2202608x128
+Embedding 4 size 305x128
+Embedding 5 size 24x128
+Embedding 6 size 12517x128
+Embedding 7 size 633x128
+Embedding 8 size 3x128
+Embedding 9 size 93145x128
+Embedding 10 size 5683x128
+Embedding 11 size 8351593x128
+Embedding 12 size 3194x128
+Embedding 13 size 27x128
+Embedding 14 size 14992x128
+Embedding 15 size 5461306x128
+Embedding 16 size 10x128
+Embedding 17 size 5652x128
+Embedding 18 size 2173x128
+Embedding 19 size 4x128
+Embedding 20 size 7046547x128
+Embedding 21 size 18x128
+Embedding 22 size 15x128
+Embedding 23 size 286181x128
+Embedding 24 size 105x128
+Embedding 25 size 142572x128
+Loading saved model saved_models/safe/full
+Saved at: epoch = 0/1, batch = 306969/306969, ntbatch = 25581
+Training state: loss = 0.447980, accuracy = 79.230 %
+Testing state: loss = 0.453967, accuracy = 78.776 %
+Before compression
+<bound method Module.parameters of DLRM_Net(
+  (emb_l): ModuleList(
+    (0): EmbeddingBag(1460, 128, mode=sum)
+    (1): EmbeddingBag(583, 128, mode=sum)
+    (2): EmbeddingBag(10131227, 128, mode=sum)
+    (3): EmbeddingBag(2202608, 128, mode=sum)
+    (4): EmbeddingBag(305, 128, mode=sum)
+    (5): EmbeddingBag(24, 128, mode=sum)
+    (6): EmbeddingBag(12517, 128, mode=sum)
+    (7): EmbeddingBag(633, 128, mode=sum)
+    (8): EmbeddingBag(3, 128, mode=sum)
+    (9): EmbeddingBag(93145, 128, mode=sum)
+    (10): EmbeddingBag(5683, 128, mode=sum)
+    (11): EmbeddingBag(8351593, 128, mode=sum)
+    (12): EmbeddingBag(3194, 128, mode=sum)
+    (13): EmbeddingBag(27, 128, mode=sum)
+    (14): EmbeddingBag(14992, 128, mode=sum)
+    (15): EmbeddingBag(5461306, 128, mode=sum)
+    (16): EmbeddingBag(10, 128, mode=sum)
+    (17): EmbeddingBag(5652, 128, mode=sum)
+    (18): EmbeddingBag(2173, 128, mode=sum)
+    (19): EmbeddingBag(4, 128, mode=sum)
+    (20): EmbeddingBag(7046547, 128, mode=sum)
+    (21): EmbeddingBag(18, 128, mode=sum)
+    (22): EmbeddingBag(15, 128, mode=sum)
+    (23): EmbeddingBag(286181, 128, mode=sum)
+    (24): EmbeddingBag(105, 128, mode=sum)
+    (25): EmbeddingBag(142572, 128, mode=sum)
+  )
+  (bot_l): Sequential(
+    (0): Linear(in_features=13, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=256, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=256, out_features=128, bias=True)
+    (7): ReLU()
+  )
+  (top_l): Sequential(
+    (0): Linear(in_features=479, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)>
+test acc 2579383.000000 test loss 1486438.894255 test_sample 3274330.000000
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+Shape  [[200, 220, 250], [4, 4, 8]]
+init tensor shape torch.Size([10131227, 128])
+torch.Size([1, 200, 4, 16]) torch.Size([1, 200, 4, 16])
+torch.Size([16, 220, 4, 4]) torch.Size([16, 220, 4, 4])
+torch.Size([4, 250, 8, 1]) torch.Size([4, 250, 8, 1])
+Shape  [[125, 130, 136], [4, 4, 8]]
+init tensor shape torch.Size([2202608, 128])
+torch.Size([1, 125, 4, 16]) torch.Size([1, 125, 4, 16])
+torch.Size([16, 130, 4, 1]) torch.Size([16, 130, 4, 1])
+torch.Size([1, 136, 8, 1]) torch.Size([1, 136, 8, 1])
+Shape  [[200, 200, 209], [4, 4, 8]]
+init tensor shape torch.Size([8351593, 128])
+torch.Size([1, 200, 4, 16]) torch.Size([1, 200, 4, 16])
+torch.Size([16, 200, 4, 2]) torch.Size([16, 200, 4, 2])
+torch.Size([2, 209, 8, 1]) torch.Size([2, 209, 8, 1])
+Shape  [[166, 175, 188], [4, 4, 8]]
+init tensor shape torch.Size([5461306, 128])
+torch.Size([1, 166, 4, 16]) torch.Size([1, 166, 4, 16])
+torch.Size([16, 175, 4, 2]) torch.Size([16, 175, 4, 2])
+torch.Size([2, 188, 8, 1]) torch.Size([2, 188, 8, 1])
+Shape  [[200, 200, 200], [4, 4, 8]]
+init tensor shape torch.Size([7046547, 128])
+torch.Size([1, 200, 4, 16]) torch.Size([1, 200, 4, 16])
+torch.Size([16, 200, 4, 1]) torch.Size([16, 200, 4, 1])
+torch.Size([1, 200, 8, 1]) torch.Size([1, 200, 8, 1])
+After compression
+<bound method Module.parameters of DLRM_Net(
+  (emb_l): ModuleList(
+    (0): EmbeddingBag(1460, 128, mode=sum)
+    (1): EmbeddingBag(583, 128, mode=sum)
+    (2): TensorizedEmbedding(
+      (tensor): TensorTrainMatrix(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x200x4x16]
+            (1): Parameter containing: [torch.FloatTensor of size 16x220x4x4]
+            (2): Parameter containing: [torch.FloatTensor of size 4x250x8x1]
+            (3): Parameter containing: [torch.FloatTensor of size 1x200x4x16]
+            (4): Parameter containing: [torch.FloatTensor of size 16x220x4x4]
+            (5): Parameter containing: [torch.FloatTensor of size 4x250x8x1]
+            (6): Parameter containing: [torch.FloatTensor of size 16]
+            (7): Parameter containing: [torch.FloatTensor of size 4]
+        )
+      )
+    )
+    (3): TensorizedEmbedding(
+      (tensor): TensorTrainMatrix(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x125x4x16]
+            (1): Parameter containing: [torch.FloatTensor of size 16x130x4x1]
+            (2): Parameter containing: [torch.FloatTensor of size 1x136x8x1]
+            (3): Parameter containing: [torch.FloatTensor of size 1x125x4x16]
+            (4): Parameter containing: [torch.FloatTensor of size 16x130x4x1]
+            (5): Parameter containing: [torch.FloatTensor of size 1x136x8x1]
+            (6): Parameter containing: [torch.FloatTensor of size 16]
+            (7): Parameter containing: [torch.FloatTensor of size 1]
+        )
+      )
+    )
+    (4): EmbeddingBag(305, 128, mode=sum)
+    (5): EmbeddingBag(24, 128, mode=sum)
+    (6): EmbeddingBag(12517, 128, mode=sum)
+    (7): EmbeddingBag(633, 128, mode=sum)
+    (8): EmbeddingBag(3, 128, mode=sum)
+    (9): EmbeddingBag(93145, 128, mode=sum)
+    (10): EmbeddingBag(5683, 128, mode=sum)
+    (11): TensorizedEmbedding(
+      (tensor): TensorTrainMatrix(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x200x4x16]
+            (1): Parameter containing: [torch.FloatTensor of size 16x200x4x2]
+            (2): Parameter containing: [torch.FloatTensor of size 2x209x8x1]
+            (3): Parameter containing: [torch.FloatTensor of size 1x200x4x16]
+            (4): Parameter containing: [torch.FloatTensor of size 16x200x4x2]
+            (5): Parameter containing: [torch.FloatTensor of size 2x209x8x1]
+            (6): Parameter containing: [torch.FloatTensor of size 16]
+            (7): Parameter containing: [torch.FloatTensor of size 2]
+        )
+      )
+    )
+    (12): EmbeddingBag(3194, 128, mode=sum)
+    (13): EmbeddingBag(27, 128, mode=sum)
+    (14): EmbeddingBag(14992, 128, mode=sum)
+    (15): TensorizedEmbedding(
+      (tensor): TensorTrainMatrix(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x166x4x16]
+            (1): Parameter containing: [torch.FloatTensor of size 16x175x4x2]
+            (2): Parameter containing: [torch.FloatTensor of size 2x188x8x1]
+            (3): Parameter containing: [torch.FloatTensor of size 1x166x4x16]
+            (4): Parameter containing: [torch.FloatTensor of size 16x175x4x2]
+            (5): Parameter containing: [torch.FloatTensor of size 2x188x8x1]
+            (6): Parameter containing: [torch.FloatTensor of size 16]
+            (7): Parameter containing: [torch.FloatTensor of size 2]
+        )
+      )
+    )
+    (16): EmbeddingBag(10, 128, mode=sum)
+    (17): EmbeddingBag(5652, 128, mode=sum)
+    (18): EmbeddingBag(2173, 128, mode=sum)
+    (19): EmbeddingBag(4, 128, mode=sum)
+    (20): TensorizedEmbedding(
+      (tensor): TensorTrainMatrix(
+        (trainable_variables): ParameterList(
+            (0): Parameter containing: [torch.FloatTensor of size 1x200x4x16]
+            (1): Parameter containing: [torch.FloatTensor of size 16x200x4x1]
+            (2): Parameter containing: [torch.FloatTensor of size 1x200x8x1]
+            (3): Parameter containing: [torch.FloatTensor of size 1x200x4x16]
+            (4): Parameter containing: [torch.FloatTensor of size 16x200x4x1]
+            (5): Parameter containing: [torch.FloatTensor of size 1x200x8x1]
+            (6): Parameter containing: [torch.FloatTensor of size 16]
+            (7): Parameter containing: [torch.FloatTensor of size 1]
+        )
+      )
+    )
+    (21): EmbeddingBag(18, 128, mode=sum)
+    (22): EmbeddingBag(15, 128, mode=sum)
+    (23): EmbeddingBag(286181, 128, mode=sum)
+    (24): EmbeddingBag(105, 128, mode=sum)
+    (25): EmbeddingBag(142572, 128, mode=sum)
+  )
+  (bot_l): Sequential(
+    (0): Linear(in_features=13, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=256, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=256, out_features=128, bias=True)
+    (7): ReLU()
+  )
+  (top_l): Sequential(
+    (0): Linear(in_features=479, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)>
+Saving model to saved_models/TensorTrainMatrix
+test acc 2561885.000000 test loss 1519314.179161 test_sample 3274330.000000
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+time/loss/accuracy (if enabled):
+Finished training it 512/76743 of epoch 0, -1.00 ms/it, loss 0.457772, accuracy 78.650 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 1024/76743 of epoch 0, -1.00 ms/it, loss 0.459440, accuracy 78.566 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 1024/76743 of epoch 0, loss 0.461792, accuracy 78.347 %, best 78.776 %
+Finished training it 1536/76743 of epoch 0, -1.00 ms/it, loss 0.456657, accuracy 78.706 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 2048/76743 of epoch 0, -1.00 ms/it, loss 0.454829, accuracy 78.770 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 2048/76743 of epoch 0, loss 0.461129, accuracy 78.386 %, best 78.776 %
+Finished training it 2560/76743 of epoch 0, -1.00 ms/it, loss 0.455698, accuracy 78.814 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 3072/76743 of epoch 0, -1.00 ms/it, loss 0.455682, accuracy 78.744 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 3072/76743 of epoch 0, loss 0.460722, accuracy 78.406 %, best 78.776 %
+Finished training it 3584/76743 of epoch 0, -1.00 ms/it, loss 0.453958, accuracy 78.895 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 4096/76743 of epoch 0, -1.00 ms/it, loss 0.456024, accuracy 78.747 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 4096/76743 of epoch 0, loss 0.460417, accuracy 78.422 %, best 78.776 %
+Finished training it 4608/76743 of epoch 0, -1.00 ms/it, loss 0.455372, accuracy 78.819 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 5120/76743 of epoch 0, -1.00 ms/it, loss 0.455042, accuracy 78.767 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 5120/76743 of epoch 0, loss 0.460212, accuracy 78.434 %, best 78.776 %
+Finished training it 5632/76743 of epoch 0, -1.00 ms/it, loss 0.454759, accuracy 78.753 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 6144/76743 of epoch 0, -1.00 ms/it, loss 0.454031, accuracy 78.888 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 6144/76743 of epoch 0, loss 0.459964, accuracy 78.445 %, best 78.776 %
+Finished training it 6656/76743 of epoch 0, -1.00 ms/it, loss 0.455184, accuracy 78.781 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 7168/76743 of epoch 0, -1.00 ms/it, loss 0.454347, accuracy 78.876 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 7168/76743 of epoch 0, loss 0.459761, accuracy 78.457 %, best 78.776 %
+Finished training it 7680/76743 of epoch 0, -1.00 ms/it, loss 0.453437, accuracy 78.862 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 8192/76743 of epoch 0, -1.00 ms/it, loss 0.454547, accuracy 78.788 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 8192/76743 of epoch 0, loss 0.459630, accuracy 78.463 %, best 78.776 %
+Finished training it 8704/76743 of epoch 0, -1.00 ms/it, loss 0.453373, accuracy 78.938 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 9216/76743 of epoch 0, -1.00 ms/it, loss 0.453748, accuracy 78.818 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 9216/76743 of epoch 0, loss 0.459489, accuracy 78.471 %, best 78.776 %
+Finished training it 9728/76743 of epoch 0, -1.00 ms/it, loss 0.453290, accuracy 78.886 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 10240/76743 of epoch 0, -1.00 ms/it, loss 0.453697, accuracy 78.881 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 10240/76743 of epoch 0, loss 0.459330, accuracy 78.482 %, best 78.776 %
+Finished training it 10752/76743 of epoch 0, -1.00 ms/it, loss 0.451449, accuracy 78.990 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 11264/76743 of epoch 0, -1.00 ms/it, loss 0.454161, accuracy 78.852 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 11264/76743 of epoch 0, loss 0.459206, accuracy 78.485 %, best 78.776 %
+Finished training it 11776/76743 of epoch 0, -1.00 ms/it, loss 0.453766, accuracy 78.881 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 12288/76743 of epoch 0, -1.00 ms/it, loss 0.452403, accuracy 78.941 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 12288/76743 of epoch 0, loss 0.459193, accuracy 78.486 %, best 78.776 %
+Finished training it 12800/76743 of epoch 0, -1.00 ms/it, loss 0.453556, accuracy 78.882 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 13312/76743 of epoch 0, -1.00 ms/it, loss 0.454164, accuracy 78.890 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 13312/76743 of epoch 0, loss 0.459081, accuracy 78.490 %, best 78.776 %
+Finished training it 13824/76743 of epoch 0, -1.00 ms/it, loss 0.451524, accuracy 79.005 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 14336/76743 of epoch 0, -1.00 ms/it, loss 0.451974, accuracy 78.990 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 14336/76743 of epoch 0, loss 0.459054, accuracy 78.491 %, best 78.776 %
+Finished training it 14848/76743 of epoch 0, -1.00 ms/it, loss 0.452252, accuracy 78.942 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 15360/76743 of epoch 0, -1.00 ms/it, loss 0.451358, accuracy 79.029 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 15360/76743 of epoch 0, loss 0.458889, accuracy 78.504 %, best 78.776 %
+Finished training it 15872/76743 of epoch 0, -1.00 ms/it, loss 0.451101, accuracy 79.007 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 16384/76743 of epoch 0, -1.00 ms/it, loss 0.452358, accuracy 79.009 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 16384/76743 of epoch 0, loss 0.458781, accuracy 78.510 %, best 78.776 %
+Finished training it 16896/76743 of epoch 0, -1.00 ms/it, loss 0.453895, accuracy 78.835 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 17408/76743 of epoch 0, -1.00 ms/it, loss 0.453496, accuracy 78.856 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 17408/76743 of epoch 0, loss 0.458701, accuracy 78.512 %, best 78.776 %
+Finished training it 17920/76743 of epoch 0, -1.00 ms/it, loss 0.451001, accuracy 78.975 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 18432/76743 of epoch 0, -1.00 ms/it, loss 0.452981, accuracy 78.894 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 18432/76743 of epoch 0, loss 0.458642, accuracy 78.515 %, best 78.776 %
+Finished training it 18944/76743 of epoch 0, -1.00 ms/it, loss 0.454972, accuracy 78.837 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 19456/76743 of epoch 0, -1.00 ms/it, loss 0.449369, accuracy 79.142 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 19456/76743 of epoch 0, loss 0.458511, accuracy 78.519 %, best 78.776 %
+Finished training it 19968/76743 of epoch 0, -1.00 ms/it, loss 0.453350, accuracy 78.901 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 20480/76743 of epoch 0, -1.00 ms/it, loss 0.452708, accuracy 78.968 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 20480/76743 of epoch 0, loss 0.458486, accuracy 78.524 %, best 78.776 %
+Finished training it 20992/76743 of epoch 0, -1.00 ms/it, loss 0.451384, accuracy 79.102 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 21504/76743 of epoch 0, -1.00 ms/it, loss 0.452857, accuracy 78.971 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 21504/76743 of epoch 0, loss 0.458425, accuracy 78.528 %, best 78.776 %
+Finished training it 22016/76743 of epoch 0, -1.00 ms/it, loss 0.450447, accuracy 79.020 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 22528/76743 of epoch 0, -1.00 ms/it, loss 0.453530, accuracy 78.812 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 22528/76743 of epoch 0, loss 0.458450, accuracy 78.529 %, best 78.776 %
+Finished training it 23040/76743 of epoch 0, -1.00 ms/it, loss 0.452125, accuracy 79.023 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 23552/76743 of epoch 0, -1.00 ms/it, loss 0.450636, accuracy 79.021 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 23552/76743 of epoch 0, loss 0.458301, accuracy 78.538 %, best 78.776 %
+Finished training it 24064/76743 of epoch 0, -1.00 ms/it, loss 0.451769, accuracy 78.951 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 24576/76743 of epoch 0, -1.00 ms/it, loss 0.452161, accuracy 79.020 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 24576/76743 of epoch 0, loss 0.458222, accuracy 78.539 %, best 78.776 %
+Finished training it 25088/76743 of epoch 0, -1.00 ms/it, loss 0.450267, accuracy 79.075 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 25600/76743 of epoch 0, -1.00 ms/it, loss 0.450714, accuracy 79.011 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 25600/76743 of epoch 0, loss 0.458163, accuracy 78.544 %, best 78.776 %
+Finished training it 26112/76743 of epoch 0, -1.00 ms/it, loss 0.450981, accuracy 79.031 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 26624/76743 of epoch 0, -1.00 ms/it, loss 0.451691, accuracy 78.950 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 26624/76743 of epoch 0, loss 0.458138, accuracy 78.545 %, best 78.776 %
+Finished training it 27136/76743 of epoch 0, -1.00 ms/it, loss 0.450839, accuracy 79.072 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 27648/76743 of epoch 0, -1.00 ms/it, loss 0.453066, accuracy 78.920 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 27648/76743 of epoch 0, loss 0.458108, accuracy 78.544 %, best 78.776 %
+Finished training it 28160/76743 of epoch 0, -1.00 ms/it, loss 0.451865, accuracy 79.001 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 28672/76743 of epoch 0, -1.00 ms/it, loss 0.454827, accuracy 78.708 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 28672/76743 of epoch 0, loss 0.458036, accuracy 78.554 %, best 78.776 %
+Finished training it 29184/76743 of epoch 0, -1.00 ms/it, loss 0.452302, accuracy 78.896 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 29696/76743 of epoch 0, -1.00 ms/it, loss 0.450872, accuracy 79.051 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 29696/76743 of epoch 0, loss 0.457951, accuracy 78.557 %, best 78.776 %
+Finished training it 30208/76743 of epoch 0, -1.00 ms/it, loss 0.452900, accuracy 78.846 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 30720/76743 of epoch 0, -1.00 ms/it, loss 0.452706, accuracy 79.016 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 30720/76743 of epoch 0, loss 0.457934, accuracy 78.560 %, best 78.776 %
+Finished training it 31232/76743 of epoch 0, -1.00 ms/it, loss 0.451983, accuracy 78.987 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 31744/76743 of epoch 0, -1.00 ms/it, loss 0.451190, accuracy 79.003 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 31744/76743 of epoch 0, loss 0.457989, accuracy 78.561 %, best 78.776 %
+Finished training it 32256/76743 of epoch 0, -1.00 ms/it, loss 0.453474, accuracy 78.849 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 32768/76743 of epoch 0, -1.00 ms/it, loss 0.452664, accuracy 78.932 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 32768/76743 of epoch 0, loss 0.457891, accuracy 78.563 %, best 78.776 %
+Finished training it 33280/76743 of epoch 0, -1.00 ms/it, loss 0.454149, accuracy 78.861 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 33792/76743 of epoch 0, -1.00 ms/it, loss 0.449927, accuracy 79.049 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 33792/76743 of epoch 0, loss 0.457843, accuracy 78.562 %, best 78.776 %
+Finished training it 34304/76743 of epoch 0, -1.00 ms/it, loss 0.449669, accuracy 79.070 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 34816/76743 of epoch 0, -1.00 ms/it, loss 0.452184, accuracy 78.885 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 34816/76743 of epoch 0, loss 0.457786, accuracy 78.564 %, best 78.776 %
+Finished training it 35328/76743 of epoch 0, -1.00 ms/it, loss 0.450994, accuracy 79.042 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 35840/76743 of epoch 0, -1.00 ms/it, loss 0.449817, accuracy 79.101 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 35840/76743 of epoch 0, loss 0.457702, accuracy 78.573 %, best 78.776 %
+Finished training it 36352/76743 of epoch 0, -1.00 ms/it, loss 0.452597, accuracy 78.872 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 36864/76743 of epoch 0, -1.00 ms/it, loss 0.450209, accuracy 79.015 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 36864/76743 of epoch 0, loss 0.457744, accuracy 78.570 %, best 78.776 %
+Finished training it 37376/76743 of epoch 0, -1.00 ms/it, loss 0.450465, accuracy 79.045 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 37888/76743 of epoch 0, -1.00 ms/it, loss 0.452181, accuracy 78.929 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 37888/76743 of epoch 0, loss 0.457589, accuracy 78.578 %, best 78.776 %
+Finished training it 38400/76743 of epoch 0, -1.00 ms/it, loss 0.450436, accuracy 79.055 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 38912/76743 of epoch 0, -1.00 ms/it, loss 0.447868, accuracy 79.202 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 38912/76743 of epoch 0, loss 0.457552, accuracy 78.577 %, best 78.776 %
+Finished training it 39424/76743 of epoch 0, -1.00 ms/it, loss 0.449511, accuracy 79.078 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 39936/76743 of epoch 0, -1.00 ms/it, loss 0.450403, accuracy 79.119 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 39936/76743 of epoch 0, loss 0.457524, accuracy 78.582 %, best 78.776 %
+Finished training it 40448/76743 of epoch 0, -1.00 ms/it, loss 0.450569, accuracy 79.064 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 40960/76743 of epoch 0, -1.00 ms/it, loss 0.449749, accuracy 79.116 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 40960/76743 of epoch 0, loss 0.457512, accuracy 78.579 %, best 78.776 %
+Finished training it 41472/76743 of epoch 0, -1.00 ms/it, loss 0.449769, accuracy 79.089 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 41984/76743 of epoch 0, -1.00 ms/it, loss 0.450672, accuracy 78.954 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 41984/76743 of epoch 0, loss 0.457513, accuracy 78.584 %, best 78.776 %
+Finished training it 42496/76743 of epoch 0, -1.00 ms/it, loss 0.452225, accuracy 78.951 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 43008/76743 of epoch 0, -1.00 ms/it, loss 0.451138, accuracy 78.971 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 43008/76743 of epoch 0, loss 0.457466, accuracy 78.588 %, best 78.776 %
+Finished training it 43520/76743 of epoch 0, -1.00 ms/it, loss 0.450342, accuracy 79.139 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 44032/76743 of epoch 0, -1.00 ms/it, loss 0.451893, accuracy 78.937 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 44032/76743 of epoch 0, loss 0.457435, accuracy 78.589 %, best 78.776 %
+Finished training it 44544/76743 of epoch 0, -1.00 ms/it, loss 0.449917, accuracy 79.116 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 45056/76743 of epoch 0, -1.00 ms/it, loss 0.449750, accuracy 79.068 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 45056/76743 of epoch 0, loss 0.457379, accuracy 78.592 %, best 78.776 %
+Finished training it 45568/76743 of epoch 0, -1.00 ms/it, loss 0.449979, accuracy 78.998 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 46080/76743 of epoch 0, -1.00 ms/it, loss 0.451353, accuracy 78.961 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 46080/76743 of epoch 0, loss 0.457334, accuracy 78.593 %, best 78.776 %
+Finished training it 46592/76743 of epoch 0, -1.00 ms/it, loss 0.450224, accuracy 79.065 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 47104/76743 of epoch 0, -1.00 ms/it, loss 0.450157, accuracy 79.145 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 47104/76743 of epoch 0, loss 0.457359, accuracy 78.596 %, best 78.776 %
+Finished training it 47616/76743 of epoch 0, -1.00 ms/it, loss 0.450719, accuracy 79.044 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 48128/76743 of epoch 0, -1.00 ms/it, loss 0.450474, accuracy 79.000 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 48128/76743 of epoch 0, loss 0.457275, accuracy 78.598 %, best 78.776 %
+Finished training it 48640/76743 of epoch 0, -1.00 ms/it, loss 0.451331, accuracy 78.996 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 49152/76743 of epoch 0, -1.00 ms/it, loss 0.451858, accuracy 78.966 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 49152/76743 of epoch 0, loss 0.457341, accuracy 78.598 %, best 78.776 %
+Finished training it 49664/76743 of epoch 0, -1.00 ms/it, loss 0.449172, accuracy 79.212 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 50176/76743 of epoch 0, -1.00 ms/it, loss 0.450070, accuracy 79.068 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 50176/76743 of epoch 0, loss 0.457283, accuracy 78.599 %, best 78.776 %
+Finished training it 50688/76743 of epoch 0, -1.00 ms/it, loss 0.449246, accuracy 79.067 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 51200/76743 of epoch 0, -1.00 ms/it, loss 0.449607, accuracy 79.176 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 51200/76743 of epoch 0, loss 0.457200, accuracy 78.602 %, best 78.776 %
+Finished training it 51712/76743 of epoch 0, -1.00 ms/it, loss 0.450694, accuracy 78.998 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 52224/76743 of epoch 0, -1.00 ms/it, loss 0.449548, accuracy 79.074 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 52224/76743 of epoch 0, loss 0.457178, accuracy 78.600 %, best 78.776 %
+Finished training it 52736/76743 of epoch 0, -1.00 ms/it, loss 0.451309, accuracy 79.023 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 53248/76743 of epoch 0, -1.00 ms/it, loss 0.450289, accuracy 79.042 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 53248/76743 of epoch 0, loss 0.457171, accuracy 78.603 %, best 78.776 %
+Finished training it 53760/76743 of epoch 0, -1.00 ms/it, loss 0.451191, accuracy 78.956 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 54272/76743 of epoch 0, -1.00 ms/it, loss 0.450137, accuracy 79.120 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 54272/76743 of epoch 0, loss 0.457142, accuracy 78.606 %, best 78.776 %
+Finished training it 54784/76743 of epoch 0, -1.00 ms/it, loss 0.451066, accuracy 79.003 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 55296/76743 of epoch 0, -1.00 ms/it, loss 0.449791, accuracy 79.051 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 55296/76743 of epoch 0, loss 0.457091, accuracy 78.604 %, best 78.776 %
+Finished training it 55808/76743 of epoch 0, -1.00 ms/it, loss 0.450117, accuracy 79.067 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 56320/76743 of epoch 0, -1.00 ms/it, loss 0.450647, accuracy 79.102 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 56320/76743 of epoch 0, loss 0.457091, accuracy 78.609 %, best 78.776 %
+Finished training it 56832/76743 of epoch 0, -1.00 ms/it, loss 0.448408, accuracy 79.158 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 57344/76743 of epoch 0, -1.00 ms/it, loss 0.451212, accuracy 78.957 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 57344/76743 of epoch 0, loss 0.457061, accuracy 78.606 %, best 78.776 %
+Finished training it 57856/76743 of epoch 0, -1.00 ms/it, loss 0.450206, accuracy 79.126 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 58368/76743 of epoch 0, -1.00 ms/it, loss 0.449361, accuracy 79.124 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 58368/76743 of epoch 0, loss 0.456977, accuracy 78.614 %, best 78.776 %
+Finished training it 58880/76743 of epoch 0, -1.00 ms/it, loss 0.447512, accuracy 79.179 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 59392/76743 of epoch 0, -1.00 ms/it, loss 0.452105, accuracy 78.957 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 59392/76743 of epoch 0, loss 0.457014, accuracy 78.608 %, best 78.776 %
+Finished training it 59904/76743 of epoch 0, -1.00 ms/it, loss 0.449456, accuracy 79.080 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 60416/76743 of epoch 0, -1.00 ms/it, loss 0.451356, accuracy 79.003 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 60416/76743 of epoch 0, loss 0.456978, accuracy 78.609 %, best 78.776 %
+Finished training it 60928/76743 of epoch 0, -1.00 ms/it, loss 0.447590, accuracy 79.201 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 61440/76743 of epoch 0, -1.00 ms/it, loss 0.449230, accuracy 79.107 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 61440/76743 of epoch 0, loss 0.456936, accuracy 78.613 %, best 78.776 %
+Finished training it 61952/76743 of epoch 0, -1.00 ms/it, loss 0.449584, accuracy 79.136 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 62464/76743 of epoch 0, -1.00 ms/it, loss 0.449833, accuracy 79.042 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 62464/76743 of epoch 0, loss 0.456912, accuracy 78.612 %, best 78.776 %
+Finished training it 62976/76743 of epoch 0, -1.00 ms/it, loss 0.449314, accuracy 79.113 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 63488/76743 of epoch 0, -1.00 ms/it, loss 0.448832, accuracy 79.166 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 63488/76743 of epoch 0, loss 0.456874, accuracy 78.614 %, best 78.776 %
+Finished training it 64000/76743 of epoch 0, -1.00 ms/it, loss 0.449190, accuracy 79.159 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 64512/76743 of epoch 0, -1.00 ms/it, loss 0.446557, accuracy 79.266 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 64512/76743 of epoch 0, loss 0.456846, accuracy 78.619 %, best 78.776 %
+Finished training it 65024/76743 of epoch 0, -1.00 ms/it, loss 0.448461, accuracy 79.160 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 65536/76743 of epoch 0, -1.00 ms/it, loss 0.448544, accuracy 79.192 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 65536/76743 of epoch 0, loss 0.456825, accuracy 78.620 %, best 78.776 %
+Finished training it 66048/76743 of epoch 0, -1.00 ms/it, loss 0.449147, accuracy 79.132 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 66560/76743 of epoch 0, -1.00 ms/it, loss 0.447490, accuracy 79.247 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 66560/76743 of epoch 0, loss 0.456813, accuracy 78.612 %, best 78.776 %
+Finished training it 67072/76743 of epoch 0, -1.00 ms/it, loss 0.450251, accuracy 79.044 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 67584/76743 of epoch 0, -1.00 ms/it, loss 0.449603, accuracy 79.078 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 67584/76743 of epoch 0, loss 0.456857, accuracy 78.618 %, best 78.776 %
+Finished training it 68096/76743 of epoch 0, -1.00 ms/it, loss 0.448920, accuracy 79.085 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 68608/76743 of epoch 0, -1.00 ms/it, loss 0.445705, accuracy 79.401 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 68608/76743 of epoch 0, loss 0.456759, accuracy 78.622 %, best 78.776 %
+Finished training it 69120/76743 of epoch 0, -1.00 ms/it, loss 0.447929, accuracy 79.161 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 69632/76743 of epoch 0, -1.00 ms/it, loss 0.449861, accuracy 79.016 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 69632/76743 of epoch 0, loss 0.456747, accuracy 78.617 %, best 78.776 %
+Finished training it 70144/76743 of epoch 0, -1.00 ms/it, loss 0.449552, accuracy 79.100 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 70656/76743 of epoch 0, -1.00 ms/it, loss 0.450258, accuracy 79.033 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 70656/76743 of epoch 0, loss 0.456800, accuracy 78.616 %, best 78.776 %
+Finished training it 71168/76743 of epoch 0, -1.00 ms/it, loss 0.447920, accuracy 79.197 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 71680/76743 of epoch 0, -1.00 ms/it, loss 0.448215, accuracy 79.206 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 71680/76743 of epoch 0, loss 0.456756, accuracy 78.619 %, best 78.776 %
+Finished training it 72192/76743 of epoch 0, -1.00 ms/it, loss 0.448617, accuracy 79.108 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 72704/76743 of epoch 0, -1.00 ms/it, loss 0.446824, accuracy 79.212 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 72704/76743 of epoch 0, loss 0.456744, accuracy 78.619 %, best 78.776 %
+Finished training it 73216/76743 of epoch 0, -1.00 ms/it, loss 0.448168, accuracy 79.113 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 73728/76743 of epoch 0, -1.00 ms/it, loss 0.447617, accuracy 79.181 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 73728/76743 of epoch 0, loss 0.456743, accuracy 78.614 %, best 78.776 %
+Finished training it 74240/76743 of epoch 0, -1.00 ms/it, loss 0.447896, accuracy 79.286 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 74752/76743 of epoch 0, -1.00 ms/it, loss 0.449288, accuracy 79.071 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 74752/76743 of epoch 0, loss 0.456702, accuracy 78.622 %, best 78.776 %
+Finished training it 75264/76743 of epoch 0, -1.00 ms/it, loss 0.449230, accuracy 79.065 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 75776/76743 of epoch 0, -1.00 ms/it, loss 0.446041, accuracy 79.299 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 75776/76743 of epoch 0, loss 0.456692, accuracy 78.620 %, best 78.776 %
+Finished training it 76288/76743 of epoch 0, -1.00 ms/it, loss 0.448948, accuracy 79.014 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Finished training it 76743/76743 of epoch 0, -1.00 ms/it, loss 0.446712, accuracy 79.310 %
+Tensor type  TensorTrainMatrix  rank  [16, 4]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 2]
+Tensor type  TensorTrainMatrix  rank  [16, 1]
+Testing at - 76743/76743 of epoch 0, loss 0.456637, accuracy 78.624 %, best 78.776 %
