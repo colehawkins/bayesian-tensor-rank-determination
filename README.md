@@ -8,9 +8,11 @@ The directories `mnist` `nlp` and `dlrm` contain MAP implementations (no samplin
 
 The directory `tensor_layers` has the python package for the tensorized layers.
 
-This implementation differs slightly from the results described in [our paper on Bayesian tensor rank determination for neural networks](https://arxiv.org/abs/2010.08689) in which many posterior samples are drawn. However the results are very similar.
+This implementation is a MAP implementation of [our paper on Bayesian tensor rank determination for neural networks](https://arxiv.org/abs/2010.08689) in which many posterior samples are drawn. However the results are very similar and this is computationally more efficient.
 
 
 ## Issues?
 
 Feel free to contact `colepshawkins@gmail.com` with any questions, or raise an issue.
+
+
