@@ -3,10 +3,9 @@ The main file is modified from a standard pytorch [MNIST example](https://github
 
 ## Setup 
 
-Install the requirements and set up the conda environment:
+Install the requirements and set up a conda environment:
 ```
 conda env update -f requirements.yml
-conda activate tensor_layers
 ```
 
 Install the tensor layers package. You will need to move up one directory, then return to this directory to run the MNIST example.
